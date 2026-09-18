@@ -1,0 +1,110 @@
+{
+  "1": {
+    "source_ref": {
+      "source_id": "MASTER_V1",
+      "section": 1,
+      "line_start": 46,
+      "line_end": 68
+    },
+    "raw_excerpt": "# 1. CORE PRIORITY\n\nUX Writing 판단 우선순위는 아래와 같다.\n\n1. **정확성**\n2. **사용자의 현재 상태 이해**\n3. **다음 행동의 명확성**\n4. **중요한 결과 인지**\n5. **정보 위계**\n6. **쉬운 한국어**\n7. **구체성**\n8. **간결함**\n9. **일관된 톤**\n10. **문장의 세련됨**\n\n짧은 문장이라고 좋은 문장이 아니다.\n\n긴 문장이 무조건 나쁜 문장도 아니다.\n\n돈, 권리, 제한, 취소 불가, 자동결제처럼 중요한 결과라면 **필요한 정보는 충분히 써야 한다.**\n\n---\n"
+  },
+  "102": {
+    "source_ref": {
+      "source_id": "MASTER_V1",
+      "section": 102,
+      "line_start": 3589,
+      "line_end": 3654
+    },
+    "raw_excerpt": "# 102. HARD FAIL CONDITIONS\n\n다음 중 하나라도 발생하면 재작성한다.\n\n### HF-01\n\n개발자용 오류를 그대로 노출함.\n\n### HF-02\n\n사용자가 해결할 수 있는데 해결 방법이 없음.\n\n### HF-03\n\n실제 확인되지 않은 오류 원인을 단정함.\n\n### HF-04\n\n돈이 나가는데 금액이나 반복 결제 여부가 숨겨져 있음.\n\n### HF-05\n\n취소·삭제처럼 비가역적 행동인데 결과를 설명하지 않음.\n\n### HF-06\n\n법률 문장을 그대로 복사해 사용자가 이해하기 어려움.\n\n### HF-07\n\n사용자 실수를 공격적으로 표현함.\n\n### HF-08\n\n중요한 CTA가 `확인`으로만 되어 있음.\n\n### HF-09\n\n현재 상태보다 내부 상태 코드를 보여줌.\n\n### HF-10\n\n화면만으로 충분한 행동을 긴 문장으로 반복함.\n\n### HF-11\n\n동일한 내용을 제목·본문·CTA에서 세 번 반복함.\n\n### HF-12\n\nUI 문제를 긴 설명으로 덮음.\n\n### HF-13\n\n사용자 행동보다 회사 정책을 우선 설명함.\n\n### HF-14\n\n자동결제나 수수료처럼 중요한 결과를 Secondary 정보로 숨김.\n\n### HF-15\n\n필요하지 않은 시점에 인증·등록을 앞당겨 요구함.\n\n---\n"
+  },
+  "103": {
+    "source_ref": {
+      "source_id": "MASTER_V1",
+      "section": 103,
+      "line_start": 3655,
+      "line_end": 3676
+    },
+    "raw_excerpt": "# 103. QUALITY SCORE\n\n100점 기준.\n\n| 항목배점     |    |\n| -------- | -- |\n| 상태 이해    | 15 |\n| 행동 명확성   | 15 |\n| 정확성      | 15 |\n| 중요 결과 인지 | 15 |\n| 쉬운 한국어   | 10 |\n| 구체성      | 10 |\n| 정보 위계    | 10 |\n| 간결함      | 5  |\n| 톤 일관성    | 5  |\n\n90점 미만이면 재작성한다.\n\nHard Fail은 점수와 관계없이 재작성한다.\n\n---\n"
+  },
+  "104": {
+    "source_ref": {
+      "source_id": "MASTER_V1",
+      "section": 104,
+      "line_start": 3677,
+      "line_end": 3722
+    },
+    "raw_excerpt": "# 104. SELF REVIEW\n\n최종 문구를 만들기 전에 묻는다.\n\n### STATE\n\n사용자는 지금 무슨 상태인지 아는가?\n\n### WHY\n\n원인을 알아야 하는 상황인데 설명했는가?\n\n### SO WHAT\n\n이것이 사용자에게 어떤 영향을 주는지 알 수 있는가?\n\n### ACTION\n\n사용자가 다음에 무엇을 해야 하는지 아는가?\n\n### RECOVERY\n\n문제가 있다면 사용자가 복구할 수 있는가?\n\n### COST\n\n돈이 들어가거나 사라지는가?\n\n### TIME\n\n시간 제한이 있는가?\n\n### CONTROL\n\n사용자의 선택 없이 중요한 행동이 자동 실행되는가?\n\n### LANGUAGE\n\n내부 용어나 행정어가 남아 있는가?\n\n### REDUNDANCY\n\n화면에서 이미 보여주는 것을 다시 말하고 있는가?\n\n---\n"
+  },
+  "108": {
+    "source_ref": {
+      "source_id": "MASTER_V1",
+      "section": 108,
+      "line_start": 3820,
+      "line_end": 3848
+    },
+    "raw_excerpt": "# 108. USER PREFERENCE MEMORY SCHEMA\n\n새로운 UX Writing 피드백은 다음 형태로 저장한다.\n\n```json\n{\n  \"id\": \"AUTH-001\",\n  \"date\": \"YYYY-MM-DD\",\n  \"domain\": \"identity_verification\",\n  \"surface\": \"error_page\",\n  \"context\": \"...\",\n  \"original\": \"...\",\n  \"rejected\": \"...\",\n  \"preferred\": \"...\",\n  \"why_rejected\": \"...\",\n  \"why_preferred\": \"...\",\n  \"rule\": \"...\",\n  \"scope\": \"UX_GLOBAL\",\n  \"strength\": 5,\n  \"repetition_count\": 1,\n  \"confidence\": \"HIGH\",\n  \"source_type\": \"GOLD\",\n  \"status\": \"ACTIVE\"\n}\n\n```\n\n---\n"
+  },
+  "109": {
+    "source_ref": {
+      "source_id": "MASTER_V1",
+      "section": 109,
+      "line_start": 3849,
+      "line_end": 3869
+    },
+    "raw_excerpt": "# 109. SOURCE WEIGHT\n\n학습 우선순위:\n\n```text\n사용자가 직접 수정한 문장\n        ↓\n사용자가 명시적으로 채택한 문장\n        ↓\n사용자가 강하게 거절한 문장\n        ↓\n반복적으로 나타난 선호\n        ↓\n현재 데이터에서 직접 확장한 Synthetic Pair\n        ↓\n일반 UX Writing Best Practice\n\n```\n\n---\n"
+  },
+  "110": {
+    "source_ref": {
+      "source_id": "MASTER_V1",
+      "section": 110,
+      "line_start": 3870,
+      "line_end": 3893
+    },
+    "raw_excerpt": "# 110. GOLD / SYNTHETIC 분리\n\n### GOLD\n\n실제 대화에서 명시적 선호 또는 거절이 확인됨.\n\nWeight: 5\n\n### STRONG\\_SYNTHETIC\n\nGOLD 규칙을 거의 동일한 UX 상황으로 확장.\n\nWeight: 3\n\n### SYNTHETIC\n\n일반적인 제품 상황에 확장.\n\nWeight: 1\\~2\n\n모델은 GOLD와 충돌하는 일반론을 사용하지 않는다.\n\n---\n"
+  },
+  "111": {
+    "source_ref": {
+      "source_id": "MASTER_V1",
+      "section": 111,
+      "line_start": 3894,
+      "line_end": 3915
+    },
+    "raw_excerpt": "# 111. RULE PROMOTION\n\n한 번 나온 피드백은 UX 전역 규칙으로 바로 승격하지 않는다.\n\n### Example\n\n한 번:\n\n> “진행”이라는 표현이 어색함.\n\nLocal preference.\n\n반복:\n\n> 진행 / 처리 / 수행 같은 명사형 표현을 여러 화면에서 반복 거절.\n\nUX Global Rule:\n\n> 행동을 구체적인 동사로 표현한다.\n\n---\n"
+  },
+  "112": {
+    "source_ref": {
+      "source_id": "MASTER_V1",
+      "section": 112,
+      "line_start": 3916,
+      "line_end": 3929
+    },
+    "raw_excerpt": "# 112. OVERRIDE ORDER\n\n충돌 시 다음 순서가 우선한다.\n\n1. 현재 사용자의 명시적 요구\n2. 현재 화면의 정책·법적 요구\n3. GOLD Preference\n4. 반복적으로 확인된 UX Preference\n5. Domain Rule\n6. General UX Writing Rule\n7. 일반적인 문법적 선호\n\n---\n"
+  },
+  "127": {
+    "source_ref": {
+      "source_id": "MASTER_V1",
+      "section": 127,
+      "line_start": 4225,
+      "line_end": 4253
+    },
+    "raw_excerpt": "# 127. UX WRITING의 최종 공식\n\n좋은 문구를 공식처럼 압축하면:\n\n```text\nGood UX Copy\n=\nRelevant State\n+\nNecessary Context\n+\nConcrete Consequence\n+\nActionable Next Step\n-\nSystem Jargon\n-\nRedundancy\n-\nUnnecessary Blame\n\n```\n\n항상 네 요소를 모두 넣는다는 뜻은 아니다.\n\n현재 상황에 필요한 항만 선택한다.\n\n---\n"
+  },
+  "128": {
+    "source_ref": {
+      "source_id": "MASTER_V1",
+      "section": 128,
+      "line_start": 4254,
+      "line_end": 4279
+    },
+    "raw_excerpt": "# 128. 마지막 판단 질문\n\n문구를 최종 확정하기 전에 딱 다섯 가지를 묻는다.\n\n### 1.\n\n**이 문장이 시스템이 아니라 사용자 입장에서 쓰였는가?**\n\n### 2.\n\n**사용자가 이 문구를 읽은 뒤 상태를 한 번에 이해할 수 있는가?**\n\n### 3.\n\n**행동이 필요하다면 무엇을 해야 하는지 바로 알 수 있는가?**\n\n### 4.\n\n**돈·시간·제한처럼 중요한 결과가 빠져 있지는 않은가?**\n\n### 5.\n\n**이 문장이 없어도 이해된다면 삭제할 수 있는가?**\n\n---\n"
+  },
+  "129": {
+    "source_ref": {
+      "source_id": "MASTER_V1",
+      "section": 129,
+      "line_start": 4280,
+      "line_end": 4304
+    },
+    "raw_excerpt": "# 129. 최상위 원칙\n\nUX Writing의 목적은\n\n> 더 친절하게 말하는 것\n\n도 아니고\n\n> 더 짧게 말하는 것\n\n도 아니다.\n\n목표는 하나다.\n\n> **사용자가 지금 상황을 정확히 이해하고, 최소한의 생각으로 다음 행동을 결정하게 만드는 것.**\n\n따라서 최종 판단은 항상\n\n> “이 표현이 더 자연스러운가?”\n\n보다\n\n> **“이 정보 구조가 사용자의 판단을 더 쉽게 만드는가?”**\n\n를 먼저 본다."
+  }
+}
