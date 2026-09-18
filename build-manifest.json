@@ -34,7 +34,7 @@
     "templates/docs/chatgpt-start.md": "2abe6679eec4fdff62ed18c350510f822dff3f908eb750e70cfe8f9beda737c0",
     "templates/docs/eval-readme.md": "867bfeec851019926b31e314e233ce79c71fe5fb8ba2e53d212acdea7bd10a10",
     "templates/docs/install-agents.md": "cbd71f6e4a131cef025975ee1ba6124cc971e1358552cc1635c6c9fb416eeddb",
-    "templates/docs/repository-readme.md": "63c6fe9fd0e8c60b5546c8cff970c5fa58e9c4048bce57a80ead3d7666857d4b",
+    "templates/docs/repository-readme.md": "49d1bfb829e6704db1f306b3cc7978861f5e59473abc03282ceaeeb2c0f29aa8",
     "templates/eval-result.json": "bcccfe794f9fba198e00df5263404f8d56798e17bd79a4f0761894a58fb5c1cf",
     "templates/feedback.json": "3b59249a2c57825e96a43221e1ee8ab11e89abae57d3919f2a2641ff58b21e37",
     "templates/generated-docs.json": "6c9e3b21424075a2fe5d811ce90964096240519e3bae901181c6d276a0cec64c",
@@ -45,7 +45,7 @@
   },
   "outputs": {
     ".agents/plugins/marketplace.json": "024abf0a31aa80e5122981fe39aed1e651a8310da98d05ccf39ebb83df343e22",
-    "README.md": "44a48ed0c6a173e9cb5aab267b91d1a21caaabc55550e252271d643ec8f8286d",
+    "README.md": "0dc02fd74facdd606454c51cca472bc903b298e262aba21814b03d7d53b2f353",
     "chatgpt/00_START_HERE.md": "900b3b989a93ff31959fbafb84fc878dcd550418590c990ca656be0e88edab2f",
     "chatgpt/CHIHUN_KNOWLEDGE_0.1.3.md": "105f26e69b455be0cd498c689c79e631f5ec270e563fcb5aaf2ee194bb70ce18",
     "chatgpt/PROJECT_INSTRUCTIONS.md": "3b05a22905e74066b44ab97b67419f3f3bef36f4987f3772a9df0f6aed50a34d",
