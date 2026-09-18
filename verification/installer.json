@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1",
+  "version": "0.1.2",
   "kind": "local_package_smoke_tests",
   "result": "pass",
   "tests_passed": 10,

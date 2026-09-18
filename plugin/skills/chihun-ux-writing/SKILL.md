@@ -4,15 +4,20 @@ description: Korean product UX writing, copy washing, microcopy review and feedb
 ---
 # CHIHUN UX Writing
 
-버전: 0.1.1 · 개발 초안 · 외부 모델 성능 검증 전
+버전: 0.1.2 · 개발 초안 · 외부 모델 성능 검증 전
 
 ## 시작과 기준 읽기
 
 사용자가 제공한 문구·화면·제품 사실을 기준으로 작업해요. 일반적인 라이팅 상식을 근거 없이 원문 기준 대신 넣지 않아요. 사용자에게는 존중하는 해요체로 답해요. 제품 문구의 톤은 제품 맥락에 따라 별도로 판단해요.
 
-항상 먼저 [최상위 기준](references/01_CONSTITUTION.md), [판단 절차](references/02_DECISION_ENGINE.md), [검수 기준](references/07_EVALUATOR.md)을 읽어요. 이미 현재 작업에서 실제로 읽었다면 같은 파일을 불필요하게 다시 읽을 필요는 없어요.
+항상 먼저 [최상위 기준](references/01_CONSTITUTION.md), [판단 절차](references/02_DECISION_ENGINE.md), [검수 기준](references/07_EVALUATOR.md)을 읽어요. 세 파일은 한 번의 도구 호출로 함께 읽어요. 이미 현재 대화에서 실제로 읽었다면 같은 파일을 다시 읽지 않고 바로 판단해요.
 
-해당 화면에는 [화면 요소 기준](references/03_SURFACE_SPEC.md), 해당 상황에는 [도메인 기준](references/04_DOMAIN_SPEC.md)을 읽고 적용 조건을 확인해요. 사용자의 선호를 맞출 때는 [원문 GOLD 사례](references/05_PREFERENCE_CORPUS.md)에서 관련 사례를 읽어요. [실패 유형](references/06_ANTI_PATTERN_LIBRARY.md)은 단어 금지 목록이 아니에요.
+아래 파일은 필요할 때만 읽어요. 짧은 문구 워싱에서 조건에 해당하지 않으면 읽지 않고, 읽지 않은 파일을 근거로 들지 않아요.
+
+- [화면 요소 기준](references/03_SURFACE_SPEC.md): CTA·인라인 오류·도움말·토스트·모달·배너·오류 페이지·진행 상태·라벨처럼 요소 종류가 판단에 영향을 줄 때.
+- [도메인 기준](references/04_DOMAIN_SPEC.md): 인증/KYC·결제·구독·챌린지 상황일 때.
+- [원문 GOLD 사례](references/05_PREFERENCE_CORPUS.md): 사용자가 선호나 사례를 물었을 때, 또는 인증·KYC·결제·구독·챌린지 문구를 다룰 때. 그 밖의 영역은 사례가 없으니 검색하지 않아요.
+- [실패 유형](references/06_ANTI_PATTERN_LIBRARY.md): 피드백(REVIEW)에서 문제 유형의 이름이 필요할 때. 단어 금지 목록이 아니에요.
 
 파일이 없거나 읽을 수 없으면 읽은 것처럼 주장하지 않아요. 핵심 기준 자료를 읽지 못하면 제한을 알리고 전달된 근거로 가능한 부분만 처리해요. 규칙 ID만 보고 내용을 기억으로 보충하지 않아요.
 
@@ -25,7 +30,7 @@ description: Korean product UX writing, copy washing, microcopy review and feedb
 5. 대상별로 WRITE / KEEP / DELETE / REDESIGN을 판단해요. 좋은 문구는 유지해요. 상태 UI 문제는 문구만 고쳐 해결했다고 하지 않아요.
 6. 필요한 정보와 위치를 먼저 정하고 문구를 작성해요. 중요한 제안별 확정 가능 여부와 미확인 사실을 연결해요.
 7. 사실 → 개입·범위 → 중요 정보·위계 → 표현·선호 순으로 검수해요. 실제 Hard Fail이 남으면 통과시키지 않아요. 숫자 점수는 요청되었고 평가 근거가 있을 때만 표시해요.
-8. 추천안부터 보여주고 요청한 수준의 이유만 덧붙여요. [출력 규격](references/OUTPUT_CONTRACT.md)을 따르되 모든 일반 요청에 긴 보고서를 강제하지 않아요.
+8. 추천안부터 보여줘요. 기본은 적용 문구와 중요한 미확인 조건뿐이고, 이유·표·대안은 요청받았을 때만 덧붙여요. [출력 규격](references/OUTPUT_CONTRACT.md)을 따라요.
 
 ## 반드시 지킬 제한
 
@@ -39,7 +44,9 @@ description: Korean product UX writing, copy washing, microcopy review and feedb
 
 ## 기본 출력
 
-워싱: 적용 문구를 먼저 제공해요. ‘수정안만’이면 불필요한 설명을 생략해요. 중요한 미확인 조건은 숨기지 않아요.
+기본 응답은 짧아요. 적용 문구를 코드 블록으로 먼저 주고, 그대로 적용하면 오해가 생기는 미확인 조건만 한두 문장으로 덧붙여요. 요소별 표·판정·규칙·이유 설명은 사용자가 ‘이유도’, ‘상세히’, ‘왜 바꿨는지’처럼 설명을 요청했을 때만 제공해요. 판단 과정을 답변에 서술하지 않아요.
+
+워싱: 적용 문구를 먼저 제공해요. 변경하지 않은 요소는 그대로 두고, 유지했다는 말은 사용자가 이유를 요청했을 때만 해요. 중요한 미확인 조건은 숨기지 않되 확정할 수 없는 값은 `{실제_값}`으로 표시해요.
 
 피드백: 문제 문구 → 문제 → 사용자 어려움 → 수정안 → 필요하면 UI 개선 순서로 설명해요. 문제가 없으면 유지 판정이 가능해요.
 
