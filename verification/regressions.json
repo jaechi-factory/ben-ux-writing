@@ -1,0 +1,139 @@
+{
+  "version": "0.1.1",
+  "kind": "offline_engineering_regression",
+  "result": "pass",
+  "tests_total": 30,
+  "tests_passed": 30,
+  "tests": [
+    {
+      "test": "test_R01_parent_link_no_outside_write",
+      "result": "pass"
+    },
+    {
+      "test": "test_R02_invalid_second_parent_no_first_install",
+      "result": "pass"
+    },
+    {
+      "test": "test_R03_external_link_rejected_by_both_packages",
+      "result": "pass"
+    },
+    {
+      "test": "test_R04_unknown_export_omitted_from_both_packages",
+      "result": "pass"
+    },
+    {
+      "test": "test_R05_score_mutation_stops_build_and_validate",
+      "result": "pass"
+    },
+    {
+      "test": "test_R06_hard_fail_mutation_stops_build_and_validate",
+      "result": "pass"
+    },
+    {
+      "test": "test_R07_version_upgrade_cleans_previous_outputs",
+      "result": "pass"
+    },
+    {
+      "test": "test_R08_case_change_reprojects_actual_writer_input",
+      "result": "pass"
+    },
+    {
+      "test": "test_R09_staging_link_rejected",
+      "result": "pass"
+    },
+    {
+      "test": "test_R10_backup_link_rejected",
+      "result": "pass"
+    },
+    {
+      "test": "test_R11_dangling_parent_link_rejected",
+      "result": "pass"
+    },
+    {
+      "test": "test_R12_second_commit_failure_rolls_back_fresh_install",
+      "result": "pass"
+    },
+    {
+      "test": "test_R13_second_commit_failure_restores_both_existing_installs",
+      "result": "pass"
+    },
+    {
+      "test": "test_R14_source_root_link_rejected",
+      "result": "pass"
+    },
+    {
+      "test": "test_R15_required_release_file_link_rejected",
+      "result": "pass"
+    },
+    {
+      "test": "test_R16_archives_deterministic_and_manifests_exact",
+      "result": "pass"
+    },
+    {
+      "test": "test_R17_direct_generated_input_edit_detected",
+      "result": "pass"
+    },
+    {
+      "test": "test_R18_direct_grader_edit_detected",
+      "result": "pass"
+    },
+    {
+      "test": "test_R19_score_label_mutation_rejected",
+      "result": "pass"
+    },
+    {
+      "test": "test_R20_no_rubric_data_in_runtime",
+      "result": "pass"
+    },
+    {
+      "test": "test_R21_unmanaged_generated_file_preserved_and_build_rejected",
+      "result": "pass"
+    },
+    {
+      "test": "test_R22_write_lock_blocks_concurrent_installer",
+      "result": "pass"
+    },
+    {
+      "test": "test_R23_generated_parent_symlink_blocks_build",
+      "result": "pass"
+    },
+    {
+      "test": "test_R24_zip_extract_rebuild_and_validate",
+      "result": "pass"
+    },
+    {
+      "test": "test_R25_build_failure_restores_generated_trees",
+      "result": "pass"
+    },
+    {
+      "test": "test_R26_review_workspace_separates_writer_and_grader",
+      "result": "pass"
+    },
+    {
+      "test": "test_R27_missing_reference_blocks_install",
+      "result": "pass"
+    },
+    {
+      "test": "test_R28_changed_runtime_blocks_install",
+      "result": "pass"
+    },
+    {
+      "test": "test_R29_build_failed_rollback_retains_recovery_files",
+      "result": "pass"
+    },
+    {
+      "test": "test_R30_installer_failed_rollback_retains_backup",
+      "result": "pass"
+    }
+  ],
+  "environment": "linux",
+  "independent_agent_runs": 0,
+  "external_model_runs": 0,
+  "actual_user_installations": 0,
+  "limits": [
+    "Not a hostile concurrent-filesystem sandbox",
+    "Power-loss/process-kill atomicity not tested",
+    "macOS/Windows not executed",
+    "No semantic model quality score"
+  ]
+}

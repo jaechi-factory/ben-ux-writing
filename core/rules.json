@@ -1,0 +1,2373 @@
+{
+  "status": "development_draft",
+  "rules": [
+    {
+      "id": "UX-STATE-001",
+      "title": "확인된 상태·원인",
+      "statement": "현재 상태와 확인된 원인을 정확하게 표현하고, 대기·요청·부분 완료·실제 완료를 구분한다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 11,
+          "line_start": 434,
+          "line_end": 453
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 32,
+          "line_start": 1172,
+          "line_end": 1191
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 68,
+          "line_start": 2257,
+          "line_end": 2272
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 85,
+          "line_start": 2623,
+          "line_end": 2646
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 11,
+            "line_start": 434,
+            "line_end": 453
+          },
+          "excerpt": "시스템이 실제 원인을 아는 경우에만 원인을 말한다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 32,
+            "line_start": 1172,
+            "line_end": 1191
+          },
+          "excerpt": "결제가 확정되지 않았을 때 성공처럼 표현하지 않는다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 68,
+            "line_start": 2257,
+            "line_end": 2272
+          },
+          "excerpt": "행동 즉시 결과가 발생했다면 즉시 알려준다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 85,
+            "line_start": 2623,
+            "line_end": 2646
+          },
+          "excerpt": "부분 완료 상태를 구체적으로 말한다."
+        }
+      ],
+      "modules": [
+        "core",
+        "authentication",
+        "payment",
+        "challenge"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "원인이나 처리 결과를 설명하는 모든 문구.",
+        "does_not_apply_when": "원인 정보가 없으면 원인은 쓰지 않아도 된다. 확인된 상태까지 감출 이유는 없다.",
+        "fails_when": "원인을 추정하거나, 접수·확인 중을 완료로 표현하거나, 부분 완료를 전체 완료로 표현한다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    },
+    {
+      "id": "UX-STATE-002",
+      "title": "사용자에게 의미 있는 상태",
+      "statement": "내부 코드를 번역하는 데 그치지 않고 사용자가 무엇을 할 수 있는 상태인지 말한다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 4,
+          "line_start": 140,
+          "line_end": 190
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 9,
+          "line_start": 355,
+          "line_end": 396
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 21,
+          "line_start": 778,
+          "line_end": 831
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 54,
+          "line_start": 1951,
+          "line_end": 1979
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 4,
+            "line_start": 140,
+            "line_end": 190
+          },
+          "excerpt": "시스템이 알고 있는 상태와 사용자가 알아야 하는 상태를 구분한다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 9,
+            "line_start": 355,
+            "line_end": 396
+          },
+          "excerpt": "다음은 단독으로 사용하지 않는다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 21,
+            "line_start": 778,
+            "line_end": 831
+          },
+          "excerpt": "내부에서 사용하는 짧은 상태명을 그대로 사용자에게 노출하지 않는다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 54,
+            "line_start": 1951,
+            "line_end": 1979
+          },
+          "excerpt": "누가 어디에서 사용할 수 있는가?"
+        }
+      ],
+      "modules": [
+        "core",
+        "authentication",
+        "payment"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "내부 코드·추상 상태가 사용자에게 노출된 경우.",
+        "does_not_apply_when": "맥락상 상태 라벨의 대상이 명확하면 짧은 라벨을 유지할 수 있다.",
+        "fails_when": "사용자가 상태를 이해할 수 없는 내부 코드나 실패 대상 없는 오류 통보만 제공한다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    },
+    {
+      "id": "UX-RECOVERY-001",
+      "title": "실제 복구 방법",
+      "statement": "사용자가 직접 해결할 수 있는 오류라면 가능한 복구 방법을 제공한다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 10,
+          "line_start": 397,
+          "line_end": 433
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 12,
+          "line_start": 454,
+          "line_end": 473
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 59,
+          "line_start": 2063,
+          "line_end": 2094
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 10,
+            "line_start": 397,
+            "line_end": 433
+          },
+          "excerpt": "사용자가 직접 해결할 수 있는 오류라면 다음 행동을 반드시 검토한다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 12,
+            "line_start": 454,
+            "line_end": 473
+          },
+          "excerpt": "사용자가 해결할 수 없는 문제에서는 억지 행동을 요구하지 않는다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 59,
+            "line_start": 2063,
+            "line_end": 2094
+          },
+          "excerpt": "카드번호를 확인하고 다시 결제해 주세요."
+        }
+      ],
+      "modules": [
+        "core",
+        "authentication",
+        "payment"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "입력 사실에 실제 복구 경로 또는 대체 행동이 확인된 경우.",
+        "does_not_apply_when": "사용자가 해결할 수 없으면 억지 행동을 요구하지 않는다. 복구 기능·재시도 안전성·알림 기능을 확인하지 못했다면 약속하지 않는다.",
+        "fails_when": "가능한 복구 방법을 누락하거나, 실제로 없는 기능·연락처·재시도 안전성을 만들어 낸다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    },
+    {
+      "id": "UX-BLAME-001",
+      "title": "사용자 비난 제어",
+      "statement": "오류 원인을 흐리지 않되 사용자의 잘못을 문장의 중심으로 만들지 않는다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 8,
+          "line_start": 305,
+          "line_end": 354
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 8,
+            "line_start": 305,
+            "line_end": 354
+          },
+          "excerpt": "오류 원인을 숨길 필요는 없다."
+        }
+      ],
+      "modules": [
+        "core",
+        "authentication"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "입력 오류·인증 실패 등 사용자의 행동이 원인과 관련된 경우.",
+        "does_not_apply_when": "실제 원인을 정확하게 알리는 것 자체는 비난이 아니다.",
+        "fails_when": "확인된 상태보다 사용자 실수를 공격적으로 평가한다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    },
+    {
+      "id": "UX-RISK-001",
+      "title": "중요 결과 사전 인지",
+      "statement": "금액·반복 결제·수수료·권리·제한·데이터 손실처럼 중요한 결과를 행동 전에 이해할 수 있게 제공한다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 1,
+          "line_start": 46,
+          "line_end": 68
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 28,
+          "line_start": 1030,
+          "line_end": 1045
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 44,
+          "line_start": 1683,
+          "line_end": 1705
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 45,
+          "line_start": 1706,
+          "line_end": 1721
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 70,
+          "line_start": 2295,
+          "line_end": 2310
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 76,
+          "line_start": 2391,
+          "line_end": 2407
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 1,
+            "line_start": 46,
+            "line_end": 68
+          },
+          "excerpt": "UX Writing 판단 우선순위는 아래와 같다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 28,
+            "line_start": 1030,
+            "line_end": 1045
+          },
+          "excerpt": "돈이 걸린 문구는 일반 UX보다 구체적이어야 한다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 44,
+            "line_start": 1683,
+            "line_end": 1705
+          },
+          "excerpt": "사용자가 행동하기 **전** 알아야 하는 결과는 사전 고지한다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 45,
+            "line_start": 1706,
+            "line_end": 1721
+          },
+          "excerpt": "되돌릴 수 없는 행동이면 무엇을 잃는지 구체적으로 알려준다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 70,
+            "line_start": 2295,
+            "line_end": 2310
+          },
+          "excerpt": "반대로 아래는 상세 화면에만 숨기면 안 된다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 76,
+            "line_start": 2391,
+            "line_end": 2407
+          },
+          "excerpt": "긍정적인 어조 자체가 목표가 아니다."
+        }
+      ],
+      "modules": [
+        "core",
+        "payment",
+        "subscription"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "행동이 돈·권리·시간·제한·데이터에 중요한 영향을 미치는 경우.",
+        "does_not_apply_when": "부차적 세부 정책은 하위 계층에 둘 수 있다. 중요한 결과 자체를 숨기는 예외는 두지 않는다.",
+        "fails_when": "핵심 결과를 행동 뒤에 처음 알리거나, 간결함·긍정적 어조를 이유로 삭제하거나 약화한다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    },
+    {
+      "id": "UX-CTA-001",
+      "title": "행동 예측",
+      "statement": "CTA와 주변 맥락을 통해 버튼을 누르면 무엇이 일어나는지 예측할 수 있게 한다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 22,
+          "line_start": 832,
+          "line_end": 885
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 23,
+          "line_start": 886,
+          "line_end": 917
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 115,
+          "line_start": 4004,
+          "line_end": 4015
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 22,
+            "line_start": 832,
+            "line_end": 885
+          },
+          "excerpt": "CTA는 버튼을 눌렀을 때 무엇이 일어나는지 보여준다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 23,
+            "line_start": 886,
+            "line_end": 917
+          },
+          "excerpt": "CTA는 항상 길고 구체적이어야 하는 것이 아니다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 115,
+            "line_start": 4004,
+            "line_end": 4015
+          },
+          "excerpt": "목표:"
+        }
+      ],
+      "modules": [
+        "core",
+        "cta"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "행동 선택이나 상태 전환을 실행하는 버튼.",
+        "does_not_apply_when": "저위험 순차 흐름에서 다음 단계가 명백하면 확인·다음 같은 짧은 문구를 유지할 수 있다.",
+        "fails_when": "중요한 행동인데 CTA와 주변 정보 모두 무엇을 확정하는지 설명하지 못한다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    },
+    {
+      "id": "UX-CTA-002",
+      "title": "파괴적 행동 선택",
+      "statement": "중대한 취소·삭제에서는 선택지를 구분하고 무엇을 잃는지 알린다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 24,
+          "line_start": 918,
+          "line_end": 937
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 45,
+          "line_start": 1706,
+          "line_end": 1721
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 24,
+            "line_start": 918,
+            "line_end": 937
+          },
+          "excerpt": "중대한 행동에서 `확인 / 취소` 조합을 피한다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 45,
+            "line_start": 1706,
+            "line_end": 1721
+          },
+          "excerpt": "되돌릴 수 없는 행동이면 무엇을 잃는지 구체적으로 알려준다."
+        }
+      ],
+      "modules": [
+        "cta",
+        "payment",
+        "subscription"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "중대한 취소·삭제·권리 소멸이 발생하는 확인 화면.",
+        "does_not_apply_when": "화면이 단순 완료 알림이며 새로운 파괴적 행동을 실행하지 않는다면 이 규칙을 기계적으로 적용하지 않는다.",
+        "fails_when": "취소/확인이 무엇을 취소하고 확정하는지 모호하거나 중요한 손실이 빠져 있다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    },
+    {
+      "id": "UX-CTA-003",
+      "title": "가격 재확인",
+      "statement": "가격이 의사결정의 핵심이면 CTA 또는 인접 영역에서 결제 순간 다시 인지시킨다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 25,
+          "line_start": 938,
+          "line_end": 951
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 55,
+          "line_start": 1980,
+          "line_end": 2001
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 25,
+            "line_start": 938,
+            "line_end": 951
+          },
+          "excerpt": "가격이 최종 의사결정의 핵심이면 CTA 또는 CTA 인접 영역에서 다시 인지시킨다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 55,
+            "line_start": 1980,
+            "line_end": 2001
+          },
+          "excerpt": "사용자가 이미 알고 있는 정보를 반복하지 않는다."
+        }
+      ],
+      "modules": [
+        "cta",
+        "payment",
+        "subscription"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "최종 결제를 결정하는 화면.",
+        "does_not_apply_when": "인접 영역에서 가격이 충분히 명확하면 버튼에 같은 금액을 반드시 반복할 필요는 없다.",
+        "fails_when": "무조건 중복이라는 이유로 중요한 재확인 정보를 없애거나 모든 버튼에 가격을 기계적으로 넣는다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    },
+    {
+      "id": "UX-INFO-001",
+      "title": "필요한 정보 선택",
+      "statement": "상태·이유·영향·다음 행동을 모두 채우지 말고 현재 상황에 필요한 정보만 선택한다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 2,
+          "line_start": 69,
+          "line_end": 100
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 3,
+          "line_start": 101,
+          "line_end": 139
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 77,
+          "line_start": 2408,
+          "line_end": 2445
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 79,
+          "line_start": 2488,
+          "line_end": 2504
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 80,
+          "line_start": 2505,
+          "line_end": 2525
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 81,
+          "line_start": 2526,
+          "line_end": 2544
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 127,
+          "line_start": 4225,
+          "line_end": 4253
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 2,
+            "line_start": 69,
+            "line_end": 100
+          },
+          "excerpt": "모든 UX 문구를 작성하기 전에 내부적으로 아래 질문을 순서대로 판단한다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 3,
+            "line_start": 101,
+            "line_end": 139
+          },
+          "excerpt": "모든 상황에 네 요소를 전부 넣지는 않는다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 77,
+            "line_start": 2408,
+            "line_end": 2445
+          },
+          "excerpt": "사용자가 머릿속으로 묻는 질문을 UI가 직접 해결해야 한다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 79,
+            "line_start": 2488,
+            "line_end": 2504
+          },
+          "excerpt": "UX Writing의 대표적인 실패:"
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 80,
+            "line_start": 2505,
+            "line_end": 2525
+          },
+          "excerpt": "송금하려면 본인 확인이 필요해요."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 81,
+            "line_start": 2526,
+            "line_end": 2544
+          },
+          "excerpt": "문장의 길이가 아니라 **정보 단위의 효율**을 본다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 127,
+            "line_start": 4225,
+            "line_end": 4253
+          },
+          "excerpt": "좋은 문구를 공식처럼 압축하면:"
+        }
+      ],
+      "modules": [
+        "core"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "정보량과 순서를 결정하는 모든 작업.",
+        "does_not_apply_when": "필수 조건을 생략한 짧은 문장이 더 좋은 것은 아니다.",
+        "fails_when": "네 요소를 기계적으로 모두 채우거나, 사용자 판단에 필요한 정보까지 덜어낸다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    },
+    {
+      "id": "UX-INFO-002",
+      "title": "정보 위계",
+      "statement": "정보마다 위계를 나누고 사용자가 지금 판단할 정보부터 배치한다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 46,
+          "line_start": 1722,
+          "line_end": 1749
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 47,
+          "line_start": 1750,
+          "line_end": 1775
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 69,
+          "line_start": 2273,
+          "line_end": 2294
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 70,
+          "line_start": 2295,
+          "line_end": 2310
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 78,
+          "line_start": 2446,
+          "line_end": 2487
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 46,
+            "line_start": 1722,
+            "line_end": 1749
+          },
+          "excerpt": "모든 정보를 같은 위계로 제공하지 않는다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 47,
+            "line_start": 1750,
+            "line_end": 1775
+          },
+          "excerpt": "금융/KYC처럼 정보량이 많은 경우:"
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 69,
+            "line_start": 2273,
+            "line_end": 2294
+          },
+          "excerpt": "처음부터 모든 예외 조건을 보여주지 않는다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 70,
+            "line_start": 2295,
+            "line_end": 2310
+          },
+          "excerpt": "반대로 아래는 상세 화면에만 숨기면 안 된다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 78,
+            "line_start": 2446,
+            "line_end": 2487
+          },
+          "excerpt": "3. 안 하면 무엇을 못 하는지"
+        }
+      ],
+      "modules": [
+        "core",
+        "kyc",
+        "subscription"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "여러 정보가 함께 노출되는 화면.",
+        "does_not_apply_when": "법적·정책 세부사항을 하위 영역에 둘 수 있지만 중요 결과와 필수 의미는 보존한다.",
+        "fails_when": "같은 위계에 모든 정보를 나열하거나 중요한 정보를 상세에만 숨긴다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    },
+    {
+      "id": "UX-DELETE-001",
+      "title": "불필요한 반복 삭제",
+      "statement": "UI가 이미 전달하는 행동·제목·버튼 설명과 판단에 영향 없는 메타 문구는 삭제를 검토한다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 48,
+          "line_start": 1776,
+          "line_end": 1797
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 49,
+          "line_start": 1798,
+          "line_end": 1810
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 50,
+          "line_start": 1811,
+          "line_end": 1842
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 55,
+          "line_start": 1980,
+          "line_end": 2001
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 48,
+            "line_start": 1776,
+            "line_end": 1797
+          },
+          "excerpt": "배송지를 입력하신 뒤 아래 다음 버튼을 눌러 주세요."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 49,
+            "line_start": 1798,
+            "line_end": 1810
+          },
+          "excerpt": "문구가 다음 중 하나라면 삭제를 검토한다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 50,
+            "line_start": 1811,
+            "line_end": 1842
+          },
+          "excerpt": "자동결제 금액과 날짜를 확인해 주세요."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 55,
+            "line_start": 1980,
+            "line_end": 2001
+          },
+          "excerpt": "사용자가 이미 알고 있는 정보를 반복하지 않는다."
+        }
+      ],
+      "modules": [
+        "core"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "주변 화면이 충분히 제공되어 중복 여부를 판단할 수 있는 경우.",
+        "does_not_apply_when": "가격 재확인 같은 목적 있는 반복은 구분한다. 화면을 보지 못했거나 접근성 정보 연결을 모르면 해당 판단은 조건부다.",
+        "fails_when": "필수 정보의 유일한 전달 경로를 지우거나 중복 안내를 습관적으로 추가한다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    },
+    {
+      "id": "UX-UI-001",
+      "title": "문구로 UI 문제를 덮지 않기",
+      "statement": "정보 구조·상태 표시·인터랙션 문제는 문구만 고쳐 해결했다고 판단하지 않는다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 0,
+          "line_start": 9,
+          "line_end": 45
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 63,
+          "line_start": 2169,
+          "line_end": 2182
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 82,
+          "line_start": 2545,
+          "line_end": 2570
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 105,
+          "line_start": 3723,
+          "line_end": 3754
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 0,
+            "line_start": 9,
+            "line_end": 45
+          },
+          "excerpt": "이 시스템은 특정 문장을 외우는 UX Writer를 만드는 것이 아니다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 63,
+            "line_start": 2169,
+            "line_end": 2182
+          },
+          "excerpt": "선택지가 겹치면 라이팅 문제가 아니라 정보 구조 문제다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 82,
+            "line_start": 2545,
+            "line_end": 2570
+          },
+          "excerpt": "사용자가 오늘 챌린지를 성공했는지 알기 어려움."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 105,
+            "line_start": 3723,
+            "line_end": 3754
+          },
+          "excerpt": "UX Writer는 항상 세 가지 중 하나를 선택할 수 있다."
+        }
+      ],
+      "modules": [
+        "core",
+        "challenge"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "문구를 바꿔도 사용자가 필요한 상태나 선택을 알 수 없는 경우.",
+        "does_not_apply_when": "요청 범위가 문구만이면 구조 변경은 제안으로 분리하고 파일을 임의 수정하지 않는다.",
+        "fails_when": "보이지 않는 상태를 확인하라는 설명만 쓰거나 중복 선택지를 이름만 바꿔 유지한다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    },
+    {
+      "id": "UX-CONTROL-001",
+      "title": "필요 시점과 사용자 선택",
+      "statement": "실제로 필요한 시점에 요구하고, 중요한 행동을 사용자 의도 추정으로 자동 실행하지 않는다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 20,
+          "line_start": 748,
+          "line_end": 777
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 43,
+          "line_start": 1645,
+          "line_end": 1682
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 20,
+            "line_start": 748,
+            "line_end": 777
+          },
+          "excerpt": "사용자가 **지금 반드시 하지 않아도 되는 행동을 앞당겨 요구하지 않는다.**"
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 43,
+            "line_start": 1645,
+            "line_end": 1682
+          },
+          "excerpt": "사용자 데이터를 자동 적용하거나 중요한 상태를 자동 변경하기보다 선택권을 제공한다."
+        }
+      ],
+      "modules": [
+        "core",
+        "authentication"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "인증·등록·데이터 적용·결제·예약 변경 같은 행동을 제안하는 경우.",
+        "does_not_apply_when": "지금 실제로 필요한 조건이라면 이유와 필요한 행동을 알린다.",
+        "fails_when": "불필요한 인증을 앞당기거나 중요한 변경을 승인 없이 자동 실행한다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    },
+    {
+      "id": "UX-LANG-001",
+      "title": "구체적인 쉬운 한국어",
+      "statement": "행정어·추상어·내부 절차보다 사용자가 이해할 구체적인 상태와 행동을 사용한다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 5,
+          "line_start": 191,
+          "line_end": 234
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 6,
+          "line_start": 235,
+          "line_end": 279
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 7,
+          "line_start": 280,
+          "line_end": 304
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 51,
+          "line_start": 1843,
+          "line_end": 1884
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 52,
+          "line_start": 1885,
+          "line_end": 1908
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 59,
+          "line_start": 2063,
+          "line_end": 2094
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 87,
+          "line_start": 2669,
+          "line_end": 2696
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 93,
+          "line_start": 2788,
+          "line_end": 2819
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 94,
+          "line_start": 2820,
+          "line_end": 2831
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 95,
+          "line_start": 2832,
+          "line_end": 2865
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 96,
+          "line_start": 2866,
+          "line_end": 2907
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 101,
+          "line_start": 3552,
+          "line_end": 3588
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 5,
+            "line_start": 191,
+            "line_end": 234
+          },
+          "excerpt": "가능하면 내부 프로세스보다 사용자 행동을 설명한다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 6,
+            "line_start": 235,
+            "line_end": 279
+          },
+          "excerpt": "다음 단어가 나오면 실제 의미로 번역할 수 있는지 검사한다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 7,
+            "line_start": 280,
+            "line_end": 304
+          },
+          "excerpt": "쉬운 한국어를 우선한다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 51,
+            "line_start": 1843,
+            "line_end": 1884
+          },
+          "excerpt": "자동 청구됩니다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 52,
+            "line_start": 1885,
+            "line_end": 1908
+          },
+          "excerpt": "**사용자가 상황을 정확히 이해하게 하는 것이 목표다.**"
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 59,
+            "line_start": 2063,
+            "line_end": 2094
+          },
+          "excerpt": "카드번호를 확인하고 다시 결제해 주세요."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 87,
+            "line_start": 2669,
+            "line_end": 2696
+          },
+          "excerpt": "전문 용어를 무조건 제거하지 않는다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 93,
+            "line_start": 2788,
+            "line_end": 2819
+          },
+          "excerpt": "입력해 주시기 바랍니다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 94,
+            "line_start": 2820,
+            "line_end": 2831
+          },
+          "excerpt": "고객님께서 입력하신 정보를 확인해 주시기 바랍니다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 95,
+            "line_start": 2832,
+            "line_end": 2865
+          },
+          "excerpt": "읽었을 때 사람이 실제로 사용할 법한 한국어인지 검사한다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 96,
+            "line_start": 2866,
+            "line_end": 2907
+          },
+          "excerpt": "UX Writing에서 높은 감점 대상으로 둔다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 101,
+            "line_start": 3552,
+            "line_end": 3588
+          },
+          "excerpt": "높은 Negative Weight를 준다."
+        }
+      ],
+      "modules": [
+        "core"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "더 정확한 상태·행동을 말할 수 있는 문구.",
+        "does_not_apply_when": "전문 용어·공식 용어·문맥상 적절한 표현은 유지한다. 부정 단어 목록은 절대 금지어 사전이 아니다.",
+        "fails_when": "단어만 치환해 의미가 달라지거나 자연스러움을 이유로 정책·상태를 바꾼다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    },
+    {
+      "id": "UX-TONE-001",
+      "title": "상황에 맞는 톤",
+      "statement": "소비자 앱은 기본 해요체를 사용하고 상황에 맞는 무게와 일관성을 유지한다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 56,
+          "line_start": 2002,
+          "line_end": 2018
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 57,
+          "line_start": 2019,
+          "line_end": 2048
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 58,
+          "line_start": 2049,
+          "line_end": 2062
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 56,
+            "line_start": 2002,
+            "line_end": 2018
+          },
+          "excerpt": "안전·사고·보험·법적 고지처럼 무게가 필요한 경우 합쇼체를 사용할 수 있다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 57,
+            "line_start": 2019,
+            "line_end": 2048
+          },
+          "excerpt": "상황의 심각도와 제품 성격에 맞춘다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 58,
+            "line_start": 2049,
+            "line_end": 2062
+          },
+          "excerpt": "불편을 드려 죄송합니다. 오류가 발생했습니다."
+        }
+      ],
+      "modules": [
+        "core"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "사용자용 문구의 말투를 결정하는 경우.",
+        "does_not_apply_when": "안전·사고·보험·법적 고지는 합쇼체를 쓸 수 있다. 실제 서비스 측 문제와 영향이 크면 사과가 필요할 수 있다.",
+        "fails_when": "금융·결제·신원 인증에서 장난스러운 표현을 쓰거나 이유 없이 말투를 섞는다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    },
+    {
+      "id": "UX-TERM-001",
+      "title": "제품 용어 일관성",
+      "statement": "같은 개념에는 같은 이름을 쓰고 사용자 이해를 기준으로 용어를 고른다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 87,
+          "line_start": 2669,
+          "line_end": 2696
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 88,
+          "line_start": 2697,
+          "line_end": 2713
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 89,
+          "line_start": 2714,
+          "line_end": 2729
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 87,
+            "line_start": 2669,
+            "line_end": 2696
+          },
+          "excerpt": "전문 용어를 무조건 제거하지 않는다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 88,
+            "line_start": 2697,
+            "line_end": 2713
+          },
+          "excerpt": "같은 개념에는 같은 이름을 사용한다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 89,
+            "line_start": 2714,
+            "line_end": 2729
+          },
+          "excerpt": "내부에서 멋있게 만든 이름보다 사용자가 이미 이해하는 단어를 우선 검토한다."
+        }
+      ],
+      "modules": [
+        "core"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "여러 문구에서 동일 개념을 참조하는 경우.",
+        "does_not_apply_when": "공식 용어는 사실과 제품 용어 자료를 확인하고 보존한다.",
+        "fails_when": "이용권·패스·티켓처럼 같은 개념의 이름을 근거 없이 섞는다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    },
+    {
+      "id": "UX-LAYER-001",
+      "title": "문제에 맞는 피드백 위치",
+      "statement": "문제의 크기에 따라 인라인·토스트·모달·오류 페이지를 선택한다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 13,
+          "line_start": 474,
+          "line_end": 499
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 114,
+          "line_start": 3973,
+          "line_end": 4003
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 13,
+            "line_start": 474,
+            "line_end": 499
+          },
+          "excerpt": "문제가 발생한 위치에서 해결할 수 있다면 그 자리에서 해결한다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 114,
+            "line_start": 3973,
+            "line_end": 4003
+          },
+          "excerpt": "입력 문구가 어느 Surface인지 먼저 분류한다."
+        }
+      ],
+      "modules": [
+        "surface"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "피드백 레이어 자체를 제안할 수 있는 작업.",
+        "does_not_apply_when": "레이어가 고정된 검토에서는 문구를 평가하고 레이어 제안은 분리한다.",
+        "fails_when": "한 필드 오류를 불필요하게 전체 흐름 중단으로 확대하거나 중대한 결정을 일시 메시지에 숨긴다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    },
+    {
+      "id": "UX-FORM-001",
+      "title": "입력 수정 정보",
+      "statement": "무엇을 입력하거나 어떻게 수정해야 하는지 구체적으로 알려준다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 14,
+          "line_start": 500,
+          "line_end": 541
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 65,
+          "line_start": 2201,
+          "line_end": 2222
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 66,
+          "line_start": 2223,
+          "line_end": 2240
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 67,
+          "line_start": 2241,
+          "line_end": 2256
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 116,
+          "line_start": 4016,
+          "line_end": 4025
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 14,
+            "line_start": 500,
+            "line_end": 541
+          },
+          "excerpt": "휴대폰 번호 11자리를 확인해 주세요."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 65,
+            "line_start": 2201,
+            "line_end": 2222
+          },
+          "excerpt": "생년월일 6자리를 입력해 주세요."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 66,
+            "line_start": 2223,
+            "line_end": 2240
+          },
+          "excerpt": "영문과 숫자를 포함해 8자 이상 입력해 주세요."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 67,
+            "line_start": 2241,
+            "line_end": 2256
+          },
+          "excerpt": "실시간 오류는 사용자가 아직 입력 중인지 고려한다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 116,
+            "line_start": 4016,
+            "line_end": 4025
+          },
+          "excerpt": "목표:"
+        }
+      ],
+      "modules": [
+        "form",
+        "authentication"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "필드 입력 도움말과 오류.",
+        "does_not_apply_when": "입력 전 도움말과 입력 후 오류의 역할을 구분하고 입력 중 너무 이른 오류는 피한다.",
+        "fails_when": "유효하지 않음 같은 평가만 하거나 입력 중인 값을 너무 일찍 오류로 표시한다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    },
+    {
+      "id": "UX-FORM-002",
+      "title": "라벨과 설명의 역할",
+      "statement": "라벨·설명·값·상태·행동을 구분하고 Placeholder를 Label 대신 쓰지 않는다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 15,
+          "line_start": 542,
+          "line_end": 581
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 61,
+          "line_start": 2114,
+          "line_end": 2141
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 90,
+          "line_start": 2730,
+          "line_end": 2749
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 91,
+          "line_start": 2750,
+          "line_end": 2771
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 92,
+          "line_start": 2772,
+          "line_end": 2787
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 15,
+            "line_start": 542,
+            "line_end": 581
+          },
+          "excerpt": "쉬운 말이 중요하다고 모든 UI Label을 문장으로 만들지는 않는다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 61,
+            "line_start": 2114,
+            "line_end": 2141
+          },
+          "excerpt": "폼 문항은 행정어보다 실제 질문처럼 쓸 수 있다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 90,
+            "line_start": 2730,
+            "line_end": 2749
+          },
+          "excerpt": "상태 Label을 버튼처럼 쓰지 않는다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 91,
+            "line_start": 2750,
+            "line_end": 2771
+          },
+          "excerpt": "Placeholder를 Label 대용으로 사용하지 않는다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 92,
+            "line_start": 2772,
+            "line_end": 2787
+          },
+          "excerpt": "예시가 입력 이해를 돕는 경우 사용한다."
+        }
+      ],
+      "modules": [
+        "form",
+        "kyc"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "입력 폼과 라벨·설명·값이 함께 있는 화면.",
+        "does_not_apply_when": "모든 라벨을 회화적 질문으로 바꿀 필요는 없다. 예시는 실제 값과 구분한다.",
+        "fails_when": "라벨이 입력 후 사라지거나 같은 문구를 서로 다른 역할에 무분별하게 반복한다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    },
+    {
+      "id": "UX-FORM-003",
+      "title": "선택지 의미 구조",
+      "statement": "선택지의 문법보다 먼저 의미 범위와 배타성을 확인한다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 62,
+          "line_start": 2142,
+          "line_end": 2168
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 63,
+          "line_start": 2169,
+          "line_end": 2182
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 64,
+          "line_start": 2183,
+          "line_end": 2200
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 62,
+            "line_start": 2142,
+            "line_end": 2168
+          },
+          "excerpt": "선택지끼리 문법 구조를 맞춘다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 63,
+            "line_start": 2169,
+            "line_end": 2182
+          },
+          "excerpt": "선택지가 겹치면 라이팅 문제가 아니라 정보 구조 문제다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 64,
+            "line_start": 2183,
+            "line_end": 2200
+          },
+          "excerpt": "Yes / No만 있을 때 질문을 이해하기 쉽게 쓴다."
+        }
+      ],
+      "modules": [
+        "form",
+        "kyc"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "선택형 질문·예/아니요 폼.",
+        "does_not_apply_when": "사용자 조사나 정책 정의 없이 선택지의 법적 범위를 임의 재정의하지 않는다.",
+        "fails_when": "겹치는 범주를 문구만 고쳐 해결했다고 판단한다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    },
+    {
+      "id": "UX-KYC-001",
+      "title": "KYC 정보 위계",
+      "statement": "사용자에게 필요한 이유·행동·미완료 영향을 먼저 설명하고 필요한 법적 근거를 보존한다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 16,
+          "line_start": 582,
+          "line_end": 618
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 17,
+          "line_start": 619,
+          "line_end": 692
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 47,
+          "line_start": 1750,
+          "line_end": 1775
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 87,
+          "line_start": 2669,
+          "line_end": 2696
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 16,
+            "line_start": 582,
+            "line_end": 618
+          },
+          "excerpt": "금융 UX에서는 두 요구가 충돌한다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 17,
+            "line_start": 619,
+            "line_end": 692
+          },
+          "excerpt": "이 돈을 어디에 사용할 예정인가요?"
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 47,
+            "line_start": 1750,
+            "line_end": 1775
+          },
+          "excerpt": "금융/KYC처럼 정보량이 많은 경우:"
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 87,
+            "line_start": 2669,
+            "line_end": 2696
+          },
+          "excerpt": "전문 용어를 무조건 제거하지 않는다."
+        }
+      ],
+      "modules": [
+        "kyc"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "고객 정보 확인이 필요한 이유와 영향을 안내하는 화면.",
+        "does_not_apply_when": "법적 고지 자체가 목적이거나 필수 원문 보존이 요구된 영역에서는 그 의미를 삭제하지 않는다.",
+        "fails_when": "법률을 첫 문장에 복사하거나 쉬운 말로 바꾼다는 이유로 필수 의미를 손실한다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    },
+    {
+      "id": "UX-SUB-001",
+      "title": "반복 결제와 해지 영향",
+      "statement": "구독의 가격·반복 결제·주기·다음 결제·이용 종료를 실제 조건에 맞게 구분한다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 27,
+          "line_start": 996,
+          "line_end": 1029
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 28,
+          "line_start": 1030,
+          "line_end": 1045
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 29,
+          "line_start": 1046,
+          "line_end": 1093
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 69,
+          "line_start": 2273,
+          "line_end": 2294
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 70,
+          "line_start": 2295,
+          "line_end": 2310
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 71,
+          "line_start": 2311,
+          "line_end": 2329
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 72,
+          "line_start": 2330,
+          "line_end": 2340
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 27,
+            "line_start": 996,
+            "line_end": 1029
+          },
+          "excerpt": "사용자가 완료 이후 영향을 궁금해한다면 시스템 완료보다 결과가 중요하다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 28,
+            "line_start": 1030,
+            "line_end": 1045
+          },
+          "excerpt": "돈이 걸린 문구는 일반 UX보다 구체적이어야 한다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 29,
+            "line_start": 1046,
+            "line_end": 1093
+          },
+          "excerpt": "월 59,000원 · 매달 자동결제"
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 69,
+            "line_start": 2273,
+            "line_end": 2294
+          },
+          "excerpt": "처음부터 모든 예외 조건을 보여주지 않는다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 70,
+            "line_start": 2295,
+            "line_end": 2310
+          },
+          "excerpt": "반대로 아래는 상세 화면에만 숨기면 안 된다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 71,
+            "line_start": 2311,
+            "line_end": 2329
+          },
+          "excerpt": "9월 25일부터 월 9,900원 자동결제"
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 72,
+            "line_start": 2330,
+            "line_end": 2340
+          },
+          "excerpt": "할인 가격만 크게 보여주고 실제 결제 구조를 숨기지 않는다."
+        }
+      ],
+      "modules": [
+        "payment",
+        "subscription"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "구독 구매·체험 전환·해지 안내.",
+        "does_not_apply_when": "현재 요소에서 모든 조건을 반복하지 않아도 되지만 필요한 중요 정보는 화면 수준에서 확인한다.",
+        "fails_when": "한 번 결제로 오해되거나 해지와 즉시 이용 종료를 혼동하게 한다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    },
+    {
+      "id": "UX-PAY-001",
+      "title": "결제 실패와 환불의 구체성",
+      "statement": "확인된 결제 실패 원인과 가능한 복구, 실제 환불 금액·조건·시점을 구체적으로 전달한다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 10,
+          "line_start": 397,
+          "line_end": 433
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 11,
+          "line_start": 434,
+          "line_end": 453
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 30,
+          "line_start": 1094,
+          "line_end": 1109
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 31,
+          "line_start": 1110,
+          "line_end": 1171
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 32,
+          "line_start": 1172,
+          "line_end": 1191
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 10,
+            "line_start": 397,
+            "line_end": 433
+          },
+          "excerpt": "사용자가 직접 해결할 수 있는 오류라면 다음 행동을 반드시 검토한다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 11,
+            "line_start": 434,
+            "line_end": 453
+          },
+          "excerpt": "시스템이 실제 원인을 아는 경우에만 원인을 말한다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 30,
+            "line_start": 1094,
+            "line_end": 1109
+          },
+          "excerpt": "환불 규정에 따라 공제 후 환불됩니다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 31,
+            "line_start": 1110,
+            "line_end": 1171
+          },
+          "excerpt": "카드사에서 결제를 승인하지 않았어요."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 32,
+            "line_start": 1172,
+            "line_end": 1191
+          },
+          "excerpt": "결제가 확정되지 않았을 때 성공처럼 표현하지 않는다."
+        }
+      ],
+      "modules": [
+        "payment"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "결제 실패·확인 중·환불을 안내하는 작업.",
+        "does_not_apply_when": "원인·환불 시점·재시도 안전성이 미확인인 경우 사례의 값을 재사용하지 않는다.",
+        "fails_when": "없는 원인·금액·기한을 생성하거나 확인 중인 결제를 완료로 표현한다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    },
+    {
+      "id": "UX-PROGRESS-001",
+      "title": "숫자를 판단 의미로",
+      "statement": "숫자의 뜻이 명확하지 않으면 성공·남은 횟수·기간 등 판단 언어로 표현한다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 37,
+          "line_start": 1424,
+          "line_end": 1477
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 38,
+          "line_start": 1478,
+          "line_end": 1520
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 85,
+          "line_start": 2623,
+          "line_end": 2646
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 86,
+          "line_start": 2647,
+          "line_end": 2668
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 37,
+            "line_start": 1424,
+            "line_end": 1477
+          },
+          "excerpt": "진행률 숫자 자체보다 의미가 중요하다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 38,
+            "line_start": 1478,
+            "line_end": 1520
+          },
+          "excerpt": "숫자만 보여줄지 의미까지 설명할지 판단한다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 85,
+            "line_start": 2623,
+            "line_end": 2646
+          },
+          "excerpt": "부분 완료 상태를 구체적으로 말한다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 86,
+            "line_start": 2647,
+            "line_end": 2668
+          },
+          "excerpt": "진행 상태에는 사용자가 남은 양을 판단할 수 있게 한다."
+        }
+      ],
+      "modules": [
+        "challenge"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "진행·수량이 사용자 판단에 중요한 화면.",
+        "does_not_apply_when": "다운로드 비율처럼 퍼센트가 적합하거나 기존 숫자 표현이 충분히 명확하면 유지할 수 있다.",
+        "fails_when": "기준 단위를 모르는 숫자를 임의 해석하거나 달성되지 않음을 미참여로 단정한다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    },
+    {
+      "id": "UX-PROGRESS-002",
+      "title": "현재 상태를 먼저",
+      "statement": "오늘 상태를 전체 진행과 과거 기록보다 먼저 제공하고 상태에 맞는 행동을 제시한다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 39,
+          "line_start": 1521,
+          "line_end": 1544
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 82,
+          "line_start": 2545,
+          "line_end": 2570
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 83,
+          "line_start": 2571,
+          "line_end": 2590
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 84,
+          "line_start": 2591,
+          "line_end": 2622
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 39,
+            "line_start": 1521,
+            "line_end": 1544
+          },
+          "excerpt": "사용자가 지금 궁금한 정보는 과거 기록보다 앞에 둔다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 82,
+            "line_start": 2545,
+            "line_end": 2570
+          },
+          "excerpt": "사용자가 오늘 챌린지를 성공했는지 알기 어려움."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 83,
+            "line_start": 2571,
+            "line_end": 2590
+          },
+          "excerpt": "현재 상태가 CTA 의미를 바꾼다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 84,
+            "line_start": 2591,
+            "line_end": 2622
+          },
+          "excerpt": "문구는 상태에 따라 변해야 한다."
+        }
+      ],
+      "modules": [
+        "challenge"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "오늘의 참여 상태가 핵심인 챌린지 화면.",
+        "does_not_apply_when": "오늘 성공·미참여 여부는 실제 상태가 확인된 경우에만 확정한다.",
+        "fails_when": "날짜 기록으로 오늘 상태를 대신하거나 상태와 맞지 않는 시작 버튼을 반복한다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    },
+    {
+      "id": "UX-SUCCESS-001",
+      "title": "성공과 빈 상태의 정보량",
+      "statement": "성공은 필요한 결과만 알리고 빈 상태에는 자연스러운 다음 행동이 있을 때만 제안한다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 26,
+          "line_start": 952,
+          "line_end": 995
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 27,
+          "line_start": 996,
+          "line_end": 1029
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 40,
+          "line_start": 1545,
+          "line_end": 1590
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 41,
+          "line_start": 1591,
+          "line_end": 1610
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 117,
+          "line_start": 4026,
+          "line_end": 4037
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 120,
+          "line_start": 4056,
+          "line_end": 4063
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 26,
+            "line_start": 952,
+            "line_end": 995
+          },
+          "excerpt": "성공 상태에서는 과도하게 장황하게 설명하지 않는다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 27,
+            "line_start": 996,
+            "line_end": 1029
+          },
+          "excerpt": "사용자가 완료 이후 영향을 궁금해한다면 시스템 완료보다 결과가 중요하다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 40,
+            "line_start": 1545,
+            "line_end": 1590
+          },
+          "excerpt": "빈 화면은 시스템에 데이터가 없다는 사실보다 사용자에게 의미가 있어야 한다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 41,
+            "line_start": 1591,
+            "line_end": 1610
+          },
+          "excerpt": "빈 상태에서 바로 다음 행동이 자연스럽다면 CTA를 제공한다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 117,
+            "line_start": 4026,
+            "line_end": 4037
+          },
+          "excerpt": "목표:"
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 120,
+            "line_start": 4056,
+            "line_end": 4063
+          },
+          "excerpt": "왜 비어 있는지 이해 + 필요한 경우 다음 행동."
+        }
+      ],
+      "modules": [
+        "surface"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "완료·성공 토스트 또는 빈 상태.",
+        "does_not_apply_when": "완료 후 중요한 영향이 있다면 함께 알린다. 모든 빈 상태에 CTA를 강제하지 않는다.",
+        "fails_when": "정확한 성공 확인 없이 완료를 쓰거나 불필요한 설명·행동을 강제한다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    },
+    {
+      "id": "UX-TIME-001",
+      "title": "시간 의미 보존",
+      "statement": "현재 맥락과 기록 용도에 맞게 상대·절대 시간을 선택하고 실제 조건을 보존한다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 18,
+          "line_start": 693,
+          "line_end": 726
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 35,
+          "line_start": 1340,
+          "line_end": 1361
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 73,
+          "line_start": 2341,
+          "line_end": 2356
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 74,
+          "line_start": 2357,
+          "line_end": 2372
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 76,
+          "line_start": 2391,
+          "line_end": 2407
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 18,
+            "line_start": 693,
+            "line_end": 726
+          },
+          "excerpt": "정책 자체보다 사용자의 실제 결과를 설명한다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 35,
+            "line_start": 1340,
+            "line_end": 1361
+          },
+          "excerpt": "상대적인 정책을 사용자의 현재 상황으로 변환할 수 있다면 변환한다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 73,
+            "line_start": 2341,
+            "line_end": 2356
+          },
+          "excerpt": "가능하면 사용자가 실제 읽는 방식으로 쓴다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 74,
+            "line_start": 2357,
+            "line_end": 2372
+          },
+          "excerpt": "기록이나 법적 효력이 중요한 경우:"
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 76,
+            "line_start": 2391,
+            "line_end": 2407
+          },
+          "excerpt": "긍정적인 어조 자체가 목표가 아니다."
+        }
+      ],
+      "modules": [
+        "core",
+        "subscription"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "날짜·기한·정지 기간을 표시하는 문구.",
+        "does_not_apply_when": "표시 변환으로 경계 시각이나 적용 기준이 달라질 수 있다면 확인 전 확정하지 않는다.",
+        "fails_when": "원문의 마감 조건을 임의로 완화하거나 기준일 없이 오늘·내일을 확정한다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    },
+    {
+      "id": "UX-FEEDBACK-001",
+      "title": "근거 있는 피드백과 대안",
+      "statement": "문제·사용자 어려움·수정안·필요한 UI 개선을 연결하고 대안은 전략이 다를 때 제시한다.",
+      "source_type": "source_derived_paraphrase",
+      "status": "compiled_draft",
+      "source_refs": [
+        {
+          "source_id": "MASTER_V1",
+          "section": 106,
+          "line_start": 3755,
+          "line_end": 3789
+        },
+        {
+          "source_id": "MASTER_V1",
+          "section": 107,
+          "line_start": 3790,
+          "line_end": 3819
+        }
+      ],
+      "source_anchors": [
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 106,
+            "line_start": 3755,
+            "line_end": 3789
+          },
+          "excerpt": "기존 UX 문구를 평가할 때는 아래 순서를 따른다."
+        },
+        {
+          "source_ref": {
+            "source_id": "MASTER_V1",
+            "section": 107,
+            "line_start": 3790,
+            "line_end": 3819
+          },
+          "excerpt": "여러 안을 만들 때 단순한 동의어 변형을 만들지 않는다."
+        }
+      ],
+      "modules": [
+        "core"
+      ],
+      "operationalization": {
+        "status": "proposed_for_v0.1_review",
+        "applies_when": "피드백 또는 대안 요청.",
+        "does_not_apply_when": "수정안만 요청하면 설명을 줄인다. 추가 대안을 기본으로 양산하지 않는다.",
+        "fails_when": "같은 의미의 동의어만 나열하거나 문제 없는 문구를 고쳐야 한다고 전제한다."
+      },
+      "example_fact_policy": "예시 값·서비스명·조건은 현재 제품의 사실이 아니다. 입력된 사실로 대체한다."
+    }
+  ],
+  "schema_version": 1
+}

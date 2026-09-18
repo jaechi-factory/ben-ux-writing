@@ -1,0 +1,21 @@
+{
+  "id": null,
+  "date": null,
+  "domain": null,
+  "surface": null,
+  "context": null,
+  "original": null,
+  "rejected": null,
+  "preferred": null,
+  "user_reason": null,
+  "inferred_reason": [],
+  "scope": "this_case_until_reviewed",
+  "source_type": "new_feedback_unreviewed",
+  "independent_feedback_events": null,
+  "strength": null,
+  "confidence": null,
+  "rule_ids": [],
+  "status": "proposed",
+  "approved_by": null,
+  "approved_at": null
+}

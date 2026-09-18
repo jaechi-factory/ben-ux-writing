@@ -1,0 +1,19 @@
+{
+  "source_id": "MASTER_V1",
+  "title": "CHIHUN UX WRITING OS — Master Specification & Preference Corpus",
+  "source_version": "1.0",
+  "original_filename": "붙여넣은 마크다운(1)(1).md",
+  "sha256": "f5232a01275a41956bfebc464a48933b52e231cd8c9966507486c88994b4408b",
+  "line_count": 4304,
+  "section_count": 130,
+  "section_numbers": "0..129",
+  "original_copy_in_release": false,
+  "local_optional_original_path": "private/master-v1.0.md",
+  "source_ownership": "사용자 제공 원문. 공개 배포 및 라이선스는 별도 결정.",
+  "supplementary_design_source": {
+    "id": "CONVERSATION_DESIGN",
+    "type": "user_supplied_draft_and_approved_working_direction",
+    "exact_transcript_in_package": false,
+    "note": "KEEP, 출처 분리, 두 배포 환경, 존중체, 조건부 판정 등은 대화에서 합의한 설계 방향. 새 필드 및 세부 적용은 v0.1 검토 초안."
+  }
+}

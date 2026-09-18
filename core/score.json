@@ -1,0 +1,59 @@
+{
+  "source_ref": {
+    "source_id": "MASTER_V1",
+    "section": 103,
+    "line_start": 3655,
+    "line_end": 3676
+  },
+  "threshold": 90,
+  "maximum": 100,
+  "items": [
+    {
+      "id": "state",
+      "label": "상태 이해",
+      "max": 15
+    },
+    {
+      "id": "action",
+      "label": "행동 명확성",
+      "max": 15
+    },
+    {
+      "id": "accuracy",
+      "label": "정확성",
+      "max": 15
+    },
+    {
+      "id": "consequence",
+      "label": "중요 결과 인지",
+      "max": 15
+    },
+    {
+      "id": "plain_korean",
+      "label": "쉬운 한국어",
+      "max": 10
+    },
+    {
+      "id": "specificity",
+      "label": "구체성",
+      "max": 10
+    },
+    {
+      "id": "information_order",
+      "label": "정보 위계",
+      "max": 10
+    },
+    {
+      "id": "brevity",
+      "label": "간결함",
+      "max": 5
+    },
+    {
+      "id": "tone",
+      "label": "톤 일관성",
+      "max": 5
+    }
+  ],
+  "hard_fail_overrides_score": true,
+  "new_implementation_note": "자료 부족으로 평가할 수 없는 항목은 null로 남기고 총점을 산출하지 않아요. 적용 제외 항목을 만점 처리하거나 분모를 임의 바꾸지 않아요. 이 처리 방식은 v0.1 운영 제안이에요."
+}

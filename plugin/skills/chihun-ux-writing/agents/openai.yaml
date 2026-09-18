@@ -1,0 +1,4 @@
+interface:
+  display_name: "CHIHUN UX Writing"
+  short_description: "제품 문구 작성·워싱·피드백, 유지·삭제·재설계 판단"
+  default_prompt: "CHIHUN 기준으로 이 제품 문구를 검토해 주세요. 적절한 문구는 유지해 주세요."

@@ -1,0 +1,57 @@
+{
+  "version": "0.1.1",
+  "kind": "local_package_smoke_tests",
+  "result": "pass",
+  "tests_passed": 10,
+  "tests_total": 10,
+  "environment": "Python standard library on Linux; temporary directories only",
+  "tests": [
+    {
+      "check": "dry_run_has_no_writes",
+      "result": "pass"
+    },
+    {
+      "check": "fresh_dual_host_copy",
+      "result": "pass"
+    },
+    {
+      "check": "all_skill_files_and_references_identical",
+      "result": "pass"
+    },
+    {
+      "check": "existing_install_preserved_by_default",
+      "result": "pass"
+    },
+    {
+      "check": "update_retains_user_edits_in_backup",
+      "result": "pass"
+    },
+    {
+      "check": "staging_outside_discovery_and_empty_after_success",
+      "result": "pass"
+    },
+    {
+      "check": "all_targets_preflight_before_write",
+      "result": "pass"
+    },
+    {
+      "check": "missing_project_rejected",
+      "result": "pass"
+    },
+    {
+      "check": "symlink_destination_rejected",
+      "result": "pass"
+    },
+    {
+      "check": "deterministic_rebuild",
+      "result": "pass"
+    }
+  ],
+  "not_tested": [
+    "actual Codex/Claude execution",
+    "actual ChatGPT installation",
+    "Windows/macOS execution",
+    "semantic copy quality",
+    "GitHub publication"
+  ]
+}
