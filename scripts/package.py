@@ -71,7 +71,7 @@ def release_payloads(root: Path = ROOT) -> dict[str,dict[str,bytes]]:
             'files':{p:common.sha256(data) for p,data in sorted(payload.items())},
             'scope':'Local file integrity only; no host or semantic quality certification',
             'self_excluded':True}).encode()
-    return {f'chihun-ux-writing-os-v{version}':repository,
+    return {f'ben-ux-writing-os-v{version}':repository,
             f'chihun-chatgpt-v{version}':chatgpt}
 
 

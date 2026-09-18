@@ -1,5 +1,5 @@
 ---
-name: chihun-ux-writing
+name: ben-ux-writing
 description: Korean product UX writing, copy washing, microcopy review and feedback using CHIHUN criteria. Use for Korean UI strings, CTA, form/error copy, payment/subscription notices and challenge states. Preserve good copy; choose WRITE, KEEP, DELETE or REDESIGN. Do not use as a general coding, translation, marketing or legal-review skill unless the user explicitly requests these UX criteria.
 ---
 # CHIHUN UX Writing

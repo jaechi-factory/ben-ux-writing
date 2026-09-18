@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
-NAME = 'chihun-ux-writing'
+NAME = 'ben-ux-writing'
 INPUT_FIELDS = ('id', 'task', 'scope', 'prompt', 'facts')
 SCORE_IDS = ('state', 'action', 'accuracy', 'consequence', 'plain_korean',
              'specificity', 'information_order', 'brevity', 'tone')
