@@ -16,7 +16,7 @@
 
 ## 이 저장소에서 바로 쓰기
 
-`.claude/skills/chihun-ux-writing/`에 스킬이 프로젝트 범위로 함께 커밋되어 있어요. 이 저장소를 열고 Claude Code 세션을 시작하면 별도 설치 없이 `/chihun-ux-writing`으로 호출할 수 있어요. 이 폴더는 `plugin/skills/chihun-ux-writing/`의 복사본이므로 기준을 바꿨다면 빌드한 뒤 아래 명령으로 다시 맞춰요.
+`.claude/skills/ben.lee-ux-writing/`에 스킬이 프로젝트 범위로 함께 커밋되어 있어요. 이 저장소를 열고 Claude Code 세션을 시작하면 별도 설치 없이 `/ben.lee-ux-writing`으로 호출할 수 있어요. 이 폴더는 `plugin/skills/ben.lee-ux-writing/`의 복사본이므로 기준을 바꿨다면 빌드한 뒤 아래 명령으로 다시 맞춰요.
 
 ```sh
 python3 scripts/install.py --target claude --scope project --project "$PWD" --replace-with-backup --apply

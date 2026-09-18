@@ -46,7 +46,7 @@ class RegressionTests(unittest.TestCase):
         self.project=self.base/'project';self.project.mkdir()
         self.outside=self.base/'outside';self.outside.mkdir()
         self.root=None
-        self.source=ROOT/'plugin/skills/chihun-ux-writing'
+        self.source=ROOT/'plugin/skills/ben.lee-ux-writing'
 
     def tearDown(self):self.temp.cleanup()
 
@@ -80,7 +80,7 @@ class RegressionTests(unittest.TestCase):
 
     def test_R03_external_link_rejected_by_both_packages(self):
         root=self.fork();secret=self.outside/'fake.txt';secret.write_text('FAKE_NO_REAL_SECRET')
-        (root/'plugin/skills/chihun-ux-writing/references/fake.txt').symlink_to(secret)
+        (root/'plugin/skills/ben.lee-ux-writing/references/fake.txt').symlink_to(secret)
         self.rejected(run(root,'package.py','--output',self.base/'out'))
         self.assertFalse(list(self.base.glob('out/*.zip')))
 
@@ -93,16 +93,16 @@ class RegressionTests(unittest.TestCase):
         for archive in (self.base/'out').glob('*.zip'):
             with zipfile.ZipFile(archive) as z:
                 self.assertFalse(any('customer-export' in n or 'unused-export' in n for n in z.namelist()))
-                if archive.name.startswith('chihun-ux-writing-os-'):
+                if archive.name.startswith('ben.lee-ux-writing-os-'):
                     z.extractall(self.base/'roundtrip')
                     self.ok(self.validate(self.base/'roundtrip'/archive.stem))
 
     def test_R05_score_mutation_stops_build_and_validate(self):
         root=self.fork();p=root/'core/score.json';obj=json.loads(p.read_text())
         obj['items'][0]['max']=14;obj['items'][1]['max']=16;writej(p,obj)
-        before=(root/'plugin/skills/chihun-ux-writing/references/07_EVALUATOR.md').read_bytes()
+        before=(root/'plugin/skills/ben.lee-ux-writing/references/07_EVALUATOR.md').read_bytes()
         self.rejected(run(root,'build.py'));self.rejected(self.validate(root))
-        self.assertEqual(before,(root/'plugin/skills/chihun-ux-writing/references/07_EVALUATOR.md').read_bytes())
+        self.assertEqual(before,(root/'plugin/skills/ben.lee-ux-writing/references/07_EVALUATOR.md').read_bytes())
 
     def test_R06_hard_fail_mutation_stops_build_and_validate(self):
         root=self.fork();p=root/'core/hard-fails.json';obj=json.loads(p.read_text())
@@ -145,7 +145,7 @@ class RegressionTests(unittest.TestCase):
     def test_R12_second_commit_failure_rolls_back_fresh_install(self):
         original=os.replace
         def fail_second(src,dst):
-            if Path(dst)==self.project/'.claude/skills/chihun-ux-writing' and '.chihun-install-staging' in Path(src).parts:
+            if Path(dst)==self.project/'.claude/skills/ben.lee-ux-writing' and '.chihun-install-staging' in Path(src).parts:
                 raise OSError('INJECTED SECOND COMMIT FAILURE')
             return original(src,dst)
         with patch.object(install.os,'replace',side_effect=fail_second):
@@ -156,22 +156,22 @@ class RegressionTests(unittest.TestCase):
     def test_R13_second_commit_failure_restores_both_existing_installs(self):
         install.install_skill(self.source,self.project,['codex','claude'])
         for host in ('.agents','.claude'):
-            (self.project/host/'skills/chihun-ux-writing/USER.txt').write_text(host)
-        before={host:install.fingerprint(self.project/host/'skills/chihun-ux-writing') for host in ('.agents','.claude')}
+            (self.project/host/'skills/ben.lee-ux-writing/USER.txt').write_text(host)
+        before={host:install.fingerprint(self.project/host/'skills/ben.lee-ux-writing') for host in ('.agents','.claude')}
         original=os.replace
         def fail_second(src,dst):
-            if Path(dst)==self.project/'.claude/skills/chihun-ux-writing' and '.chihun-install-staging' in Path(src).parts:
+            if Path(dst)==self.project/'.claude/skills/ben.lee-ux-writing' and '.chihun-install-staging' in Path(src).parts:
                 raise OSError('INJECTED SECOND COMMIT FAILURE')
             return original(src,dst)
         with patch.object(install.os,'replace',side_effect=fail_second):
             with self.assertRaises(install.InstallationError):
                 install.install_skill(self.source,self.project,['codex','claude'],replace=True)
         for host,digests in before.items():
-            self.assertEqual(install.fingerprint(self.project/host/'skills/chihun-ux-writing'),digests)
+            self.assertEqual(install.fingerprint(self.project/host/'skills/ben.lee-ux-writing'),digests)
         self.assertFalse((self.project/'.chihun-install.lock').exists())
 
     def test_R14_source_root_link_rejected(self):
-        root=self.fork();skill=root/'plugin/skills/chihun-ux-writing';saved=root/'real-skill'
+        root=self.fork();skill=root/'plugin/skills/ben.lee-ux-writing';saved=root/'real-skill'
         skill.rename(saved);skill.symlink_to(saved,target_is_directory=True)
         self.rejected(run(root,'install.py','--target','both','--project',self.project,'--apply'))
         self.assertEqual(list(self.project.iterdir()),[])
@@ -231,7 +231,7 @@ class RegressionTests(unittest.TestCase):
 
     def test_R24_zip_extract_rebuild_and_validate(self):
         root=self.fork();self.ok(run(root,'package.py','--output',self.base/'out'))
-        archive=self.base/'out'/('chihun-ux-writing-os-v'+common.version(root)+'.zip')
+        archive=self.base/'out'/('ben.lee-ux-writing-os-v'+common.version(root)+'.zip')
         with zipfile.ZipFile(archive) as z:z.extractall(self.base/'unpacked')
         extracted=self.base/'unpacked'/archive.stem
         self.ok(self.validate(extracted));before=(extracted/'build-manifest.json').read_bytes()
@@ -264,19 +264,19 @@ class RegressionTests(unittest.TestCase):
         self.rejected(run(ROOT,'prepare_review.py','--output',destination))
 
     def test_R27_missing_reference_blocks_install(self):
-        root=self.fork();(root/'plugin/skills/chihun-ux-writing/references/07_EVALUATOR.md').unlink()
+        root=self.fork();(root/'plugin/skills/ben.lee-ux-writing/references/07_EVALUATOR.md').unlink()
         self.rejected(run(root,'install.py','--target','both','--project',self.project,'--apply'))
         self.assertEqual(list(self.project.iterdir()),[])
 
     def test_R28_changed_runtime_blocks_install(self):
-        root=self.fork();p=root/'plugin/skills/chihun-ux-writing/SKILL.md';p.write_text(p.read_text()+'\nFAKE_UNBUILT_EDIT\n')
+        root=self.fork();p=root/'plugin/skills/ben.lee-ux-writing/SKILL.md';p.write_text(p.read_text()+'\nFAKE_UNBUILT_EDIT\n')
         self.rejected(run(root,'install.py','--target','both','--project',self.project,'--apply'))
         self.assertEqual(list(self.project.iterdir()),[])
 
 
     def test_R29_build_failed_rollback_retains_recovery_files(self):
         root=self.fork();proposed=build.render_outputs(root);original=os.replace
-        old_skill=(root/'plugin/skills/chihun-ux-writing/SKILL.md').read_bytes()
+        old_skill=(root/'plugin/skills/ben.lee-ux-writing/SKILL.md').read_bytes()
         def fail_forward_and_restore(src,dst):
             if Path(dst)==root/'chatgpt' and 'new' in Path(src).parts:
                 raise OSError('INJECTED COMMIT FAILURE')
@@ -286,16 +286,16 @@ class RegressionTests(unittest.TestCase):
         with patch.object(build.os,'replace',side_effect=fail_forward_and_restore):
             with self.assertRaisesRegex(RuntimeError,'Recovery files retained'):
                 build.commit_outputs(root,proposed)
-        backups=list(root.glob('.chihun-build-*/old/plugin/skills/chihun-ux-writing/SKILL.md'))
+        backups=list(root.glob('.chihun-build-*/old/plugin/skills/ben.lee-ux-writing/SKILL.md'))
         self.assertEqual(len(backups),1);self.assertEqual(backups[0].read_bytes(),old_skill)
 
     def test_R30_installer_failed_rollback_retains_backup(self):
         install.install_skill(self.source,self.project,['codex','claude'])
-        dest=self.project/'.agents/skills/chihun-ux-writing'
+        dest=self.project/'.agents/skills/ben.lee-ux-writing'
         (dest/'USER.txt').write_text('FAKE_USER_EDIT')
         original=os.replace
         def fail_forward_and_restore(src,dst):
-            if Path(dst)==self.project/'.claude/skills/chihun-ux-writing' and '.chihun-install-staging' in Path(src).parts:
+            if Path(dst)==self.project/'.claude/skills/ben.lee-ux-writing' and '.chihun-install-staging' in Path(src).parts:
                 raise OSError('INJECTED COMMIT FAILURE')
             if Path(dst)==dest and '.chihun-skill-backups' in Path(src).parts:
                 raise OSError('INJECTED ROLLBACK FAILURE')

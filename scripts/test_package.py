@@ -20,27 +20,27 @@ def main():
   run(args)
   assert not (base/'.agents').exists() and not (base/'.claude').exists();passed('dry_run_has_no_writes')
   run([*args,'--apply']);passed('fresh_dual_host_copy')
-  source=ROOT/'plugin/skills/chihun-ux-writing'
+  source=ROOT/'plugin/skills/ben.lee-ux-writing'
   for host in ['.agents','.claude']:
-   target=base/host/'skills/chihun-ux-writing'
+   target=base/host/'skills/ben.lee-ux-writing'
    for f in source.rglob('*'):
     if f.is_file():assert (target/f.relative_to(source)).read_bytes()==f.read_bytes()
   passed('all_skill_files_and_references_identical')
   run([*args,'--apply'],expected=1);passed('existing_install_preserved_by_default')
-  marker=base/'.claude/skills/chihun-ux-writing/USER_EDIT.txt';marker.write_text('keep this edit')
+  marker=base/'.claude/skills/ben.lee-ux-writing/USER_EDIT.txt';marker.write_text('keep this edit')
   run([*args,'--apply','--replace-with-backup'])
   backups=list((base/'.chihun-skill-backups/claude').rglob('USER_EDIT.txt'))
   assert len(backups)==1 and backups[0].read_text()=='keep this edit'
   assert not marker.exists();passed('update_retains_user_edits_in_backup')
   assert not list((base/'.chihun-install-staging').rglob('SKILL.md'));passed('staging_outside_discovery_and_empty_after_success')
   # Existing destination for either target prevents writes to all targets.
-  p2=Path(temp)/'preflight';(p2/'.claude/skills/chihun-ux-writing').mkdir(parents=True)
+  p2=Path(temp)/'preflight';(p2/'.claude/skills/ben.lee-ux-writing').mkdir(parents=True)
   run(['--target','both','--scope','project','--project',str(p2),'--apply'],expected=1)
   assert not (p2/'.agents').exists();passed('all_targets_preflight_before_write')
   run(['--target','codex','--scope','project','--project',str(Path(temp)/'missing'),'--apply'],expected=1);passed('missing_project_rejected')
   p3=Path(temp)/'symlink';(p3/'.agents/skills').mkdir(parents=True)
   real=Path(temp)/'existing-user-data';real.mkdir();(real/'marker').write_text('untouched')
-  (p3/'.agents/skills/chihun-ux-writing').symlink_to(real,target_is_directory=True)
+  (p3/'.agents/skills/ben.lee-ux-writing').symlink_to(real,target_is_directory=True)
   run(['--target','codex','--scope','project','--project',str(p3),'--apply','--replace-with-backup'],expected=1)
   assert (real/'marker').read_text()=='untouched';passed('symlink_destination_rejected')
  # Generated output is deterministic for identical canonical inputs.

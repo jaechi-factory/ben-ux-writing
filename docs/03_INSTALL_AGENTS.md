@@ -23,8 +23,8 @@ python3 scripts/install.py --target both --scope user --apply
 공식 로컬 스킬 경로 [D1, D2]:
 
 ```text
-Codex:      ~/.agents/skills/chihun-ux-writing/
-Claude Code: ~/.claude/skills/chihun-ux-writing/
+Codex:      ~/.agents/skills/ben.lee-ux-writing/
+Claude Code: ~/.claude/skills/ben.lee-ux-writing/
 ```
 
 프로젝트 한 곳에만 설치하려면 다음 명령을 사용해요. 경로는 실제 존재하는 작업 폴더로 바꿔요.
@@ -42,10 +42,10 @@ python3 scripts/install.py --target both --scope project --project "/absolute/pa
 
 ```text
 Codex:
-$chihun-ux-writing 아래 문구를 워싱해 주세요. 적절한 문구는 유지하고 중요한 이유만 알려주세요.
+$ben.lee-ux-writing 아래 문구를 워싱해 주세요. 적절한 문구는 유지하고 중요한 이유만 알려주세요.
 
 Claude Code:
-/chihun-ux-writing 아래 문구를 워싱해 주세요. 적절한 문구는 유지하고 중요한 이유만 알려주세요.
+/ben.lee-ux-writing 아래 문구를 워싱해 주세요. 적절한 문구는 유지하고 중요한 이유만 알려주세요.
 ```
 
 명시 호출과 자동 선택은 달라요. 설치 파일이 존재하더라도 자동 선택·참조 파일 읽기·문구 품질은 별도 확인해야 해요. 이 패키지는 사용자 머신에 이미 설치된 것이 아니에요.
@@ -65,7 +65,7 @@ python3 scripts/install.py --target both --scope user --replace-with-backup --ap
 
 ## 수동 설치
 
-Python 설치를 사용하지 않는 경우, `plugin/skills/chihun-ux-writing/` 폴더 전체를 위의 대상 경로로 복사해요. `SKILL.md` 한 파일만 복사하면 참조 파일을 읽지 못해요. 기존 폴더를 덮어쓰기 전에 따로 백업해요.
+Python 설치를 사용하지 않는 경우, `plugin/skills/ben.lee-ux-writing/` 폴더 전체를 위의 대상 경로로 복사해요. `SKILL.md` 한 파일만 복사하면 참조 파일을 읽지 못해요. 기존 폴더를 덮어쓰기 전에 따로 백업해요.
 
 ## GitHub 배포
 

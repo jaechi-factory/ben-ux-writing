@@ -1,8 +1,8 @@
 {
-  "name": "chihun-ux-writing-local",
+  "name": "ben.lee-ux-writing-local",
   "plugins": [
     {
-      "name": "chihun-ux-writing",
+      "name": "ben.lee-ux-writing",
       "source": {
         "source": "local",
         "path": "./plugin"
