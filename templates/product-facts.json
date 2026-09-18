@@ -1,0 +1,19 @@
+{
+  "product_name": null,
+  "version": null,
+  "as_of": null,
+  "facts": [
+    {
+      "id": "FACT-001",
+      "key": "billing_cycle",
+      "value": null,
+      "status": "unknown",
+      "source": null,
+      "source_date": null,
+      "applies_to": null
+    }
+  ],
+  "glossary": [],
+  "required_exact_text": [],
+  "notes": "빈 템플릿이에요. null을 추정으로 채우지 않아요. 예시 금액을 제품 값으로 가져오지 않아요."
+}
