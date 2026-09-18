@@ -1,6 +1,6 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
-  "name": "chihun-ux-writing",
-  "version": "0.1.2",
+  "name": "ben-ux-writing",
+  "version": "0.1.3",
   "description": "CHIHUN 기준의 한국어 제품 문구 작성·워싱·피드백. 개발 초안."
 }

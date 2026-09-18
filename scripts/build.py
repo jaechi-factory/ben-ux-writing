@@ -58,10 +58,10 @@ def render_outputs(root: Path = ROOT) -> dict[str, bytes]:
         common.relative_path(rel)
         outputs[rel] = (value.strip()+'\n').encode('utf-8')
     version=common.version(root);rules=load('core/rules.json')['rules'];contracts=load('core/source-contracts.json')
-    skill=ROOT/'plugin/skills/chihun-ux-writing';refs=skill/'references'
-    manifest={'$schema':'https://agent-plugins.org/schemas/1.0.0/plugin.schema.json','name':'chihun-ux-writing','version':version,'description':'CHIHUN 기준의 한국어 제품 문구 작성·워싱·피드백. 개발 초안.'}
+    skill=ROOT/'plugin/skills/ben-ux-writing';refs=skill/'references'
+    manifest={'$schema':'https://agent-plugins.org/schemas/1.0.0/plugin.schema.json','name':'ben-ux-writing','version':version,'description':'CHIHUN 기준의 한국어 제품 문구 작성·워싱·피드백. 개발 초안.'}
     write(ROOT/'plugin/plugin.json',json.dumps(manifest,ensure_ascii=False,indent=2))
-    write(ROOT/'.agents/plugins/marketplace.json',json.dumps({'name':'chihun-ux-writing-local','plugins':[{'name':'chihun-ux-writing','source':{'source':'local','path':'./plugin'},'policy':{'installation':'AVAILABLE','authentication':'ON_INSTALL'},'category':'Productivity'}]},ensure_ascii=False,indent=2))
+    write(ROOT/'.agents/plugins/marketplace.json',json.dumps({'name':'ben-ux-writing-local','plugins':[{'name':'ben-ux-writing','source':{'source':'local','path':'./plugin'},'policy':{'installation':'AVAILABLE','authentication':'ON_INSTALL'},'category':'Productivity'}]},ensure_ascii=False,indent=2))
     write(skill/'SKILL.md',read('templates/skill.md').replace('{{VERSION}}',version))
     write(skill/'agents/openai.yaml','''interface:
   display_name: "CHIHUN UX Writing"

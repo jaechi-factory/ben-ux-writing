@@ -23,7 +23,7 @@ def make_payloads(root: Path = ROOT) -> dict[str, bytes]:
         if common.read_bytes(root,rel)!=data:
             raise ValueError('Build before preparing review: '+rel)
     outputs={}
-    skill_prefix='plugin/skills/chihun-ux-writing/'
+    skill_prefix='plugin/skills/ben-ux-writing/'
     skill={rel.removeprefix(skill_prefix):data for rel,data in generated.items() if rel.startswith(skill_prefix)}
     for role in ('writer','grader','source-reviewer'):
         for rel,data in skill.items():outputs[f'{role}/skill/{rel}']=data

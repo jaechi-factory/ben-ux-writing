@@ -1,6 +1,6 @@
 # Codex·Claude Code 설치
 
-버전 0.1.2 · 설치 방식은 2026-09-18 공식 문서 확인 기준이에요. [D1], [D2]는 `docs/05_OFFICIAL_SOURCES.md`에 있어요.
+버전 0.1.3 · 설치 방식은 2026-09-18 공식 문서 확인 기준이에요. [D1], [D2]는 `docs/05_OFFICIAL_SOURCES.md`에 있어요.
 
 이 압축 파일은 GitHub에 아직 올라가 있지 않아요. 압축을 푼 저장소 루트에서 실행해요. 설치 스크립트에는 Python 3.10 이상이 필요해요. macOS/Linux 예시는 `python3`, 환경에 따라 `python`을 사용해요. Windows/macOS와 실제 에이전트 앱은 여기서 실행 검증하지 않았어요.
 
@@ -23,8 +23,8 @@ python3 scripts/install.py --target both --scope user --apply
 공식 로컬 스킬 경로 [D1, D2]:
 
 ```text
-Codex:      ~/.agents/skills/chihun-ux-writing/
-Claude Code: ~/.claude/skills/chihun-ux-writing/
+Codex:      ~/.agents/skills/ben-ux-writing/
+Claude Code: ~/.claude/skills/ben-ux-writing/
 ```
 
 프로젝트 한 곳에만 설치하려면 다음 명령을 사용해요. 경로는 실제 존재하는 작업 폴더로 바꿔요.
@@ -42,10 +42,10 @@ python3 scripts/install.py --target both --scope project --project "/absolute/pa
 
 ```text
 Codex:
-$chihun-ux-writing 아래 문구를 워싱해 주세요. 적절한 문구는 유지하고 중요한 이유만 알려주세요.
+$ben-ux-writing 아래 문구를 워싱해 주세요. 적절한 문구는 유지하고 중요한 이유만 알려주세요.
 
 Claude Code:
-/chihun-ux-writing 아래 문구를 워싱해 주세요. 적절한 문구는 유지하고 중요한 이유만 알려주세요.
+/ben-ux-writing 아래 문구를 워싱해 주세요. 적절한 문구는 유지하고 중요한 이유만 알려주세요.
 ```
 
 명시 호출과 자동 선택은 달라요. 설치 파일이 존재하더라도 자동 선택·참조 파일 읽기·문구 품질은 별도 확인해야 해요. 이 패키지는 사용자 머신에 이미 설치된 것이 아니에요.
@@ -65,7 +65,7 @@ python3 scripts/install.py --target both --scope user --replace-with-backup --ap
 
 ## 수동 설치
 
-Python 설치를 사용하지 않는 경우, `plugin/skills/chihun-ux-writing/` 폴더 전체를 위의 대상 경로로 복사해요. `SKILL.md` 한 파일만 복사하면 참조 파일을 읽지 못해요. 기존 폴더를 덮어쓰기 전에 따로 백업해요.
+Python 설치를 사용하지 않는 경우, `plugin/skills/ben-ux-writing/` 폴더 전체를 위의 대상 경로로 복사해요. `SKILL.md` 한 파일만 복사하면 참조 파일을 읽지 못해요. 기존 폴더를 덮어쓰기 전에 따로 백업해요.
 
 ## GitHub 배포
 

@@ -1,6 +1,6 @@
 # CHIHUN UX Writing · ChatGPT 시작 안내
 
-버전 0.1.2 · 첫 사용·검토용 초안이에요. 계정에 자동 설치된 것이 아니에요.
+버전 0.1.3 · 첫 사용·검토용 초안이에요. 계정에 자동 설치된 것이 아니에요.
 
 ## 가장 간단한 설정
 
@@ -8,7 +8,7 @@
 
 **2. `PROJECT_INSTRUCTIONS.md`의 내용을 프로젝트 지침에 붙여 넣어요.**
 
-**3. `CHIHUN_KNOWLEDGE_0.1.2.md`를 프로젝트에 파일로 추가해요.**
+**3. `CHIHUN_KNOWLEDGE_0.1.3.md`를 프로젝트에 파일로 추가해요.**
 
 이후 그 프로젝트에서 실제 문구와 현재 상태·제품 조건을 전달해요.
 
@@ -25,7 +25,7 @@
 | 파일 | 역할 |
 |---|---|
 | PROJECT_INSTRUCTIONS.md | 프로젝트에 붙여 넣는 실행 지침 |
-| CHIHUN_KNOWLEDGE_0.1.2.md | 첨부할 규칙·원문 선호·검수 기준 |
+| CHIHUN_KNOWLEDGE_0.1.3.md | 첨부할 규칙·원문 선호·검수 기준 |
 | SINGLE_CHAT_STARTER.md | 단일 대화에 지침과 기준을 함께 제공하는 시작 자료 |
 | REQUEST_EXAMPLES.md | 실제 요청 문장 예시 |
 
@@ -41,4 +41,4 @@
 
 ## 이전 버전에서 갱신
 
-프로젝트 지침을 현재 `PROJECT_INSTRUCTIONS.md`로 교체하고, 기존 CHIHUN_KNOWLEDGE 파일을 제거한 뒤 `CHIHUN_KNOWLEDGE_0.1.2.md`만 첨부해요. 새 대화에서 버전과 관련 기준을 읽을 수 있는지 먼저 확인해요. 새 ZIP을 받는 것만으로 기존 프로젝트가 자동 갱신되지는 않아요.
+프로젝트 지침을 현재 `PROJECT_INSTRUCTIONS.md`로 교체하고, 기존 CHIHUN_KNOWLEDGE 파일을 제거한 뒤 `CHIHUN_KNOWLEDGE_0.1.3.md`만 첨부해요. 새 대화에서 버전과 관련 기준을 읽을 수 있는지 먼저 확인해요. 새 ZIP을 받는 것만으로 기존 프로젝트가 자동 갱신되지는 않아요.

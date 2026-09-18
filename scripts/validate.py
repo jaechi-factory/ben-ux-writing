@@ -53,9 +53,9 @@ def main():
  score=load('core/score.json')
  check('original_score_total_and_threshold',sum(x['max'] for x in score['items'])==100 and score['threshold']==90 and score['hard_fail_overrides_score'])
  check('original_hard_fail_count',len(load('core/hard-fails.json'))==15)
- skill=ROOT/'plugin/skills/chihun-ux-writing';skill_text=(skill/'SKILL.md').read_text(encoding='utf-8')
+ skill=ROOT/'plugin/skills/ben-ux-writing';skill_text=(skill/'SKILL.md').read_text(encoding='utf-8')
  fm=re.match(r'^---\n(.*?)\n---\n',skill_text,re.S)
- check('skill_metadata',bool(fm and re.search(r'^name: chihun-ux-writing$',fm.group(1),re.M) and re.search(r'^description: .+',fm.group(1),re.M)))
+ check('skill_metadata',bool(fm and re.search(r'^name: ben-ux-writing$',fm.group(1),re.M) and re.search(r'^description: .+',fm.group(1),re.M)))
  check('skill_body_under_500_lines',len(skill_text.splitlines())<500,str(len(skill_text.splitlines())))
  link_errors=[]
  for f in skill.rglob('*.md'):
@@ -66,7 +66,7 @@ def main():
  check('skill_local_markdown_links',not link_errors,'; '.join(link_errors))
  check('eight_module_reference_files',all((skill/'references'/name).is_file() for name in ['01_CONSTITUTION.md','02_DECISION_ENGINE.md','03_SURFACE_SPEC.md','04_DOMAIN_SPEC.md','05_PREFERENCE_CORPUS.md','06_ANTI_PATTERN_LIBRARY.md','07_EVALUATOR.md','08_BENCHMARK.md']))
  plugin=load('plugin/plugin.json')
- check('plugin_minimal_documented_fields',plugin.get('name')=='chihun-ux-writing' and plugin.get('version')==version and isinstance(plugin.get('description'),str) and plugin.get('$schema')=='https://agent-plugins.org/schemas/1.0.0/plugin.schema.json','Local required-field check, not remote schema certification')
+ check('plugin_minimal_documented_fields',plugin.get('name')=='ben-ux-writing' and plugin.get('version')==version and isinstance(plugin.get('description'),str) and plugin.get('$schema')=='https://agent-plugins.org/schemas/1.0.0/plugin.schema.json','Local required-field check, not remote schema certification')
  market=load('.agents/plugins/marketplace.json');entry=market['plugins'][0]
  check('marketplace_path',entry['source']['path']=='./plugin' and (ROOT/entry['source']['path']/'plugin.json').is_file())
  build=load('build-manifest.json');drift=[]
@@ -75,7 +75,7 @@ def main():
    f=ROOT/path
    if not f.is_file() or common.sha256(common.read_bytes(ROOT,path))!=digest:drift.append(path)
  check('generated_files_match_canonical_sources',not drift,'; '.join(drift))
- check('version_alignment',build['version']==version==load('plugin/skills/chihun-ux-writing/references/RULE_REGISTRY.json')['version'] and (skill/'references/VERSION').read_text().strip()==version)
+ check('version_alignment',build['version']==version==load('plugin/skills/ben-ux-writing/references/RULE_REGISTRY.json')['version'] and (skill/'references/VERSION').read_text().strip()==version)
  cases=rows('evals/development-cases.jsonl');inputs=rows('evals/inputs.jsonl');rubrics=rows('evals/rubrics.jsonl')
  check('development_cases_separated',len(cases)>=20 and {c['id'] for c in cases}=={c['id'] for c in inputs}=={c['id'] for c in rubrics} and all('rubric' not in c for c in inputs))
  check('development_provenance_not_blind_or_gold',all(c['split']=='development' and not c['gold_status'] for c in cases) and load('evals/status.json')['blind_test_claim'] is False)
