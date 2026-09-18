@@ -14,14 +14,6 @@
 | 원문이 어디로 연결됐는지 확인 | `docs/01_SOURCE_MAP.md` |
 | 새 기준 추가·수정 | 아래 ‘관리 방법’ |
 
-## 이 저장소에서 바로 쓰기
-
-`.claude/skills/ben.lee-ux-writing/`에 스킬이 프로젝트 범위로 함께 커밋되어 있어요. 이 저장소를 열고 Claude Code 세션을 시작하면 별도 설치 없이 `/ben.lee-ux-writing`으로 호출할 수 있어요. 이 폴더는 `plugin/skills/ben.lee-ux-writing/`의 복사본이므로 기준을 바꿨다면 빌드한 뒤 아래 명령으로 다시 맞춰요.
-
-```sh
-python3 scripts/install.py --target claude --scope project --project "$PWD" --replace-with-backup --apply
-```
-
 ## 기본 사용
 
 워싱은 필요한 부분만 수정하고 적절한 문구는 유지해요. 피드백은 문구 문제와 UI/상태 문제를 구분해요. 새 작성은 확인된 제품 사실을 바탕으로 만들어요. 결과는 요소별 WRITE / KEEP / DELETE / REDESIGN으로 판단해요.

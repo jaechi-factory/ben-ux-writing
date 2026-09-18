@@ -1,7 +1,0 @@
-{
-  "README.md": "templates/docs/repository-readme.md",
-  "chatgpt/00_START_HERE.md": "templates/docs/chatgpt-start.md",
-  "docs/03_INSTALL_AGENTS.md": "templates/docs/install-agents.md",
-  "docs/04_CHATGPT_SETUP.md": "templates/docs/chatgpt-setup.md",
-  "evals/README.md": "templates/docs/eval-readme.md"
-}

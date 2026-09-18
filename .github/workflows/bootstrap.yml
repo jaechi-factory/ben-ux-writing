@@ -1,0 +1,36 @@
+name: Bootstrap package
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    if: contains(github.event.head_commit.message, '[bootstrap]')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore package
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .bootstrap/x00 .bootstrap/x01 .bootstrap/x02 .bootstrap/x03 .bootstrap/x04 .bootstrap/x05 .bootstrap/x06 .bootstrap/y070 .bootstrap/y071 .bootstrap/y072 .bootstrap/y073 .bootstrap/x08 .bootstrap/x09 > /tmp/pkg.b64
+          base64 -d /tmp/pkg.b64 > /tmp/pkg.tar.xz
+          echo "566fc6ecfe2e3f38ecbadf7cbcdb9fbcc1de22169a6a7b9e56ea58aa90bb7299  /tmp/pkg.tar.xz" | sha256sum -c -
+          rm -rf /tmp/pkg
+          mkdir -p /tmp/pkg
+          tar -xJf /tmp/pkg.tar.xz -C /tmp/pkg
+          find . -mindepth 1 -maxdepth 1 ! -name .git ! -name .github ! -name .bootstrap -exec rm -rf {} +
+          rsync -a /tmp/pkg/chihun-ux-writing-os-v0.1.1/ ./
+          rm -rf .bootstrap
+          rm -f .github/workflows/bootstrap.yml
+          rmdir .github/workflows 2>/dev/null || true
+          rmdir .github 2>/dev/null || true
+          test "$(find . -type f ! -path './.git/*' | wc -l | tr -d ' ')" = "95"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Import exact ben-ux-writing v0.1.1 package"
+          git push

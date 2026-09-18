@@ -1,8 +1,0 @@
-{
-  "split": "development_only",
-  "model_runs": [],
-  "user_review_completed": false,
-  "blind_test_claim": false,
-  "regression_baseline_established": false,
-  "note": "모델 실행과 사람의 수용 검토를 아직 수행하지 않았어요. 입력·채점 기준·구조 검사만 제공해요. Adversarial/경계는 split이 아니라 tags예요."
-}
