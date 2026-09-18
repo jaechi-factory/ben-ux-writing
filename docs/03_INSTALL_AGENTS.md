@@ -1,6 +1,6 @@
 # Codex·Claude Code 설치
 
-버전 0.1.1 · 설치 방식은 2026-09-18 공식 문서 확인 기준이에요. [D1], [D2]는 `docs/05_OFFICIAL_SOURCES.md`에 있어요.
+버전 0.1.2 · 설치 방식은 2026-09-18 공식 문서 확인 기준이에요. [D1], [D2]는 `docs/05_OFFICIAL_SOURCES.md`에 있어요.
 
 이 압축 파일은 GitHub에 아직 올라가 있지 않아요. 압축을 푼 저장소 루트에서 실행해요. 설치 스크립트에는 Python 3.10 이상이 필요해요. macOS/Linux 예시는 `python3`, 환경에 따라 `python`을 사용해요. Windows/macOS와 실제 에이전트 앱은 여기서 실행 검증하지 않았어요.
 

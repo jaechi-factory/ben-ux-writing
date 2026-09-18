@@ -1,9 +1,9 @@
 {
-  "version": "0.1.1",
+  "version": "0.1.2",
   "kind": "static_integrity_only",
   "result": "pass",
-  "checks_passed": 39,
-  "checks_total": 39,
+  "checks_passed": 35,
+  "checks_total": 35,
   "checks": [
     {
       "check": "json_and_jsonl_parse",
@@ -73,7 +73,7 @@
     {
       "check": "skill_body_under_500_lines",
       "result": "pass",
-      "detail": "54"
+      "detail": "61"
     },
     {
       "check": "skill_local_markdown_links",
@@ -123,7 +123,7 @@
     {
       "check": "project_instruction_budget",
       "result": "pass",
-      "detail": "1466 characters; local conservative budget, not asserted product limit"
+      "detail": "1491 characters; local conservative budget, not asserted product limit"
     },
     {
       "check": "no_source_copy_in_distribution",
@@ -179,26 +179,6 @@
       "check": "declared_model_run_records_have_required_evidence",
       "result": "pass",
       "detail": "No external model runs declared; no performance claim"
-    },
-    {
-      "check": "original_source_sha256",
-      "result": "pass",
-      "detail": ""
-    },
-    {
-      "check": "original_source_lines",
-      "result": "pass",
-      "detail": ""
-    },
-    {
-      "check": "preserved_source_excerpt_fidelity",
-      "result": "pass",
-      "detail": ""
-    },
-    {
-      "check": "rule_anchor_fidelity",
-      "result": "pass",
-      "detail": ""
     }
   ],
   "errors": [],

@@ -110,12 +110,14 @@ class RegressionTests(unittest.TestCase):
         self.rejected(run(root,'build.py'));self.rejected(self.validate(root))
 
     def test_R07_version_upgrade_cleans_previous_outputs(self):
-        root=self.fork();old=common.version(root);(root/'VERSION').write_text('0.1.2\n')
+        root=self.fork();old=common.version(root)
+        major,minor,patch=old.split('.');new=f'{major}.{minor}.{int(patch)+1}'
+        (root/'VERSION').write_text(new+'\n')
         self.ok(run(root,'build.py'));self.ok(self.validate(root))
-        self.assertEqual([p.name for p in (root/'chatgpt').glob('CHIHUN_KNOWLEDGE_*.md')],['CHIHUN_KNOWLEDGE_0.1.2.md'])
+        self.assertEqual([p.name for p in (root/'chatgpt').glob('CHIHUN_KNOWLEDGE_*.md')],['CHIHUN_KNOWLEDGE_'+new+'.md'])
         self.assertNotIn('CHIHUN_KNOWLEDGE_'+old,(root/'chatgpt/00_START_HERE.md').read_text())
-        self.assertEqual(common.load(root,'evals/result-template.json')['skill_version'],'0.1.2')
-        self.assertEqual(common.load(root,'evals/status.json')['version'],'0.1.2')
+        self.assertEqual(common.load(root,'evals/result-template.json')['skill_version'],new)
+        self.assertEqual(common.load(root,'evals/status.json')['version'],new)
 
     def test_R08_case_change_reprojects_actual_writer_input(self):
         root=self.fork();cases=common.rows(root,'evals/development-cases.jsonl')
