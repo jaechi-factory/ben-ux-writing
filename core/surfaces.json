@@ -1,0 +1,340 @@
+[
+  {
+    "id": "CTA",
+    "axis": "element",
+    "goal": "행동 예측",
+    "required": "주변 맥락을 포함해 누르면 일어나는 행동·중요 결과를 알 수 있어야 해요.",
+    "avoid": "확인/다음의 기계적 금지, 모든 버튼에 금액 반복",
+    "rule_ids": [
+      "UX-CTA-001",
+      "UX-CTA-002",
+      "UX-CTA-003"
+    ],
+    "mapping_status": "source_derived_with_v0.1_axis_model",
+    "source_refs": [
+      {
+        "source_id": "MASTER_V1",
+        "section": 22,
+        "line_start": 832,
+        "line_end": 885
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 23,
+        "line_start": 886,
+        "line_end": 917
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 24,
+        "line_start": 918,
+        "line_end": 937
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 25,
+        "line_start": 938,
+        "line_end": 951
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 115,
+        "line_start": 4004,
+        "line_end": 4015
+      }
+    ]
+  },
+  {
+    "id": "INLINE_ERROR",
+    "axis": "element",
+    "goal": "입력 수정",
+    "required": "어떤 입력을 어떻게 수정하는지; 실제 입력 조건",
+    "avoid": "막연한 오류, 입력 중 너무 이른 판정",
+    "rule_ids": [
+      "UX-FORM-001",
+      "UX-BLAME-001"
+    ],
+    "mapping_status": "source_derived_with_v0.1_axis_model",
+    "source_refs": [
+      {
+        "source_id": "MASTER_V1",
+        "section": 14,
+        "line_start": 500,
+        "line_end": 541
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 65,
+        "line_start": 2201,
+        "line_end": 2222
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 66,
+        "line_start": 2223,
+        "line_end": 2240
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 67,
+        "line_start": 2241,
+        "line_end": 2256
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 116,
+        "line_start": 4016,
+        "line_end": 4025
+      }
+    ]
+  },
+  {
+    "id": "HELPER_TEXT",
+    "axis": "element",
+    "goal": "입력 전에 필요한 이해 제공",
+    "required": "필요한 형식·조건·예시, 라벨과의 역할 구분",
+    "avoid": "라벨 대체, 오류와 불필요한 중복",
+    "rule_ids": [
+      "UX-FORM-001",
+      "UX-FORM-002"
+    ],
+    "mapping_status": "source_derived_with_v0.1_axis_model",
+    "source_refs": [
+      {
+        "source_id": "MASTER_V1",
+        "section": 15,
+        "line_start": 542,
+        "line_end": 581
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 66,
+        "line_start": 2223,
+        "line_end": 2240
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 91,
+        "line_start": 2750,
+        "line_end": 2771
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 92,
+        "line_start": 2772,
+        "line_end": 2787
+      }
+    ]
+  },
+  {
+    "id": "TOAST",
+    "axis": "container",
+    "goal": "방금 일어난 결과 확인",
+    "required": "실제로 확인된 결과",
+    "avoid": "새 행동 강제, 중요한 정책을 일시 메시지에만 표시",
+    "rule_ids": [
+      "UX-STATE-001",
+      "UX-SUCCESS-001"
+    ],
+    "mapping_status": "source_derived_with_v0.1_axis_model",
+    "source_refs": [
+      {
+        "source_id": "MASTER_V1",
+        "section": 13,
+        "line_start": 474,
+        "line_end": 499
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 26,
+        "line_start": 952,
+        "line_end": 995
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 117,
+        "line_start": 4026,
+        "line_end": 4037
+      }
+    ]
+  },
+  {
+    "id": "MODAL",
+    "axis": "container",
+    "goal": "중요한 선택과 결과 인지",
+    "required": "선택 행동과 주요 결과, 위험·손실",
+    "avoid": "모든 사소한 결과에 모달 강제",
+    "rule_ids": [
+      "UX-LAYER-001",
+      "UX-RISK-001",
+      "UX-CTA-002"
+    ],
+    "mapping_status": "source_derived_with_v0.1_axis_model",
+    "source_refs": [
+      {
+        "source_id": "MASTER_V1",
+        "section": 13,
+        "line_start": 474,
+        "line_end": 499
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 24,
+        "line_start": 918,
+        "line_end": 937
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 118,
+        "line_start": 4038,
+        "line_end": 4047
+      }
+    ]
+  },
+  {
+    "id": "BANNER",
+    "axis": "container",
+    "goal": "화면 전체에 영향을 미치는 상태·조건 알림",
+    "required": "현재 영향과 필요한 행동",
+    "avoid": "핵심 결과보다 행정적 근거만 앞세움",
+    "rule_ids": [
+      "UX-INFO-002",
+      "UX-STATE-002"
+    ],
+    "mapping_status": "source_derived_with_v0.1_axis_model",
+    "source_refs": [
+      {
+        "source_id": "MASTER_V1",
+        "section": 121,
+        "line_start": 4064,
+        "line_end": 4077
+      }
+    ]
+  },
+  {
+    "id": "ERROR_PAGE",
+    "axis": "container",
+    "goal": "흐름 중단 이해와 복구",
+    "required": "실패 대상, 현재 가능 여부, 실제 복구 방법",
+    "avoid": "확인되지 않은 원인, 억지 복구",
+    "rule_ids": [
+      "UX-STATE-001",
+      "UX-RECOVERY-001"
+    ],
+    "mapping_status": "source_derived_with_v0.1_axis_model",
+    "source_refs": [
+      {
+        "source_id": "MASTER_V1",
+        "section": 13,
+        "line_start": 474,
+        "line_end": 499
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 119,
+        "line_start": 4048,
+        "line_end": 4055
+      }
+    ]
+  },
+  {
+    "id": "PROGRESS_STATE",
+    "axis": "element",
+    "goal": "현재 상태·진행·남은 양 이해",
+    "required": "확인된 현재 상태와 진행 의미",
+    "avoid": "미달성=미참여 가정, 기준 없는 숫자 해석",
+    "rule_ids": [
+      "UX-PROGRESS-001",
+      "UX-PROGRESS-002"
+    ],
+    "mapping_status": "source_derived_with_v0.1_axis_model",
+    "source_refs": [
+      {
+        "source_id": "MASTER_V1",
+        "section": 37,
+        "line_start": 1424,
+        "line_end": 1477
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 38,
+        "line_start": 1478,
+        "line_end": 1520
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 39,
+        "line_start": 1521,
+        "line_end": 1544
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 82,
+        "line_start": 2545,
+        "line_end": 2570
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 83,
+        "line_start": 2571,
+        "line_end": 2590
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 85,
+        "line_start": 2623,
+        "line_end": 2646
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 86,
+        "line_start": 2647,
+        "line_end": 2668
+      }
+    ]
+  },
+  {
+    "id": "LABEL_STATUS",
+    "axis": "element",
+    "goal": "짧지만 대상이 분명한 이름·상태",
+    "required": "상태인지 행동인지 구분; 주변 컨텍스트",
+    "avoid": "모든 라벨을 회화적 문장으로 변경",
+    "rule_ids": [
+      "UX-FORM-002",
+      "UX-STATE-002"
+    ],
+    "mapping_status": "source_derived_with_v0.1_axis_model",
+    "source_refs": [
+      {
+        "source_id": "MASTER_V1",
+        "section": 15,
+        "line_start": 542,
+        "line_end": 581
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 54,
+        "line_start": 1951,
+        "line_end": 1979
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 90,
+        "line_start": 2730,
+        "line_end": 2749
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 122,
+        "line_start": 4078,
+        "line_end": 4100
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 123,
+        "line_start": 4101,
+        "line_end": 4118
+      }
+    ]
+  }
+]

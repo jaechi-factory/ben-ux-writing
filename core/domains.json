@@ -1,0 +1,389 @@
+[
+  {
+    "id": "authentication",
+    "task_scope": "주어진 인증 오류와 실제 복구 경로의 문구 검토",
+    "questions": [
+      "지금 인증할 수 있나요?",
+      "왜 안 되나요?",
+      "언제/어떻게 다시 할 수 있나요?"
+    ],
+    "facts_needed": [
+      "현재 인증 상태",
+      "확인된 원인",
+      "복구 경로",
+      "복구 후 가능 행동",
+      "기한 또는 잠금 조건"
+    ],
+    "source_refs": [
+      {
+        "source_id": "MASTER_V1",
+        "section": 10,
+        "line_start": 397,
+        "line_end": 433
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 11,
+        "line_start": 434,
+        "line_end": 453
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 12,
+        "line_start": 454,
+        "line_end": 473
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 20,
+        "line_start": 748,
+        "line_end": 777
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 77,
+        "line_start": 2408,
+        "line_end": 2445
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 126,
+        "line_start": 4163,
+        "line_end": 4224
+      }
+    ],
+    "rule_ids": [
+      "UX-STATE-001",
+      "UX-STATE-002",
+      "UX-RECOVERY-001",
+      "UX-BLAME-001",
+      "UX-CONTROL-001"
+    ],
+    "question_provenance": "원문의 도메인 질문을 재구성한 예상 질문; 별도 사용자 조사 결과가 아님."
+  },
+  {
+    "id": "kyc",
+    "task_scope": "제품 조건과 필수 고지가 제공된 고객 정보 확인 안내",
+    "questions": [
+      "왜 물어보나요?",
+      "무엇을 확인하나요?",
+      "안 하면 무엇을 못 하나요?"
+    ],
+    "facts_needed": [
+      "실제 필요 시점",
+      "확인 항목",
+      "미완료 영향",
+      "보존할 필수 고지"
+    ],
+    "source_refs": [
+      {
+        "source_id": "MASTER_V1",
+        "section": 16,
+        "line_start": 582,
+        "line_end": 618
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 17,
+        "line_start": 619,
+        "line_end": 692
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 47,
+        "line_start": 1750,
+        "line_end": 1775
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 61,
+        "line_start": 2114,
+        "line_end": 2141
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 62,
+        "line_start": 2142,
+        "line_end": 2168
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 63,
+        "line_start": 2169,
+        "line_end": 2182
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 64,
+        "line_start": 2183,
+        "line_end": 2200
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 78,
+        "line_start": 2446,
+        "line_end": 2487
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 126,
+        "line_start": 4163,
+        "line_end": 4224
+      }
+    ],
+    "rule_ids": [
+      "UX-KYC-001",
+      "UX-FORM-002",
+      "UX-FORM-003",
+      "UX-INFO-002"
+    ],
+    "question_provenance": "원문의 도메인 질문을 재구성한 예상 질문; 별도 사용자 조사 결과가 아님."
+  },
+  {
+    "id": "payment",
+    "task_scope": "주어진 결제 상태·금액·복구 조건의 검토",
+    "questions": [
+      "돈이 빠졌나요?",
+      "결제가 확정됐나요?",
+      "왜 실패했나요?",
+      "다시 결제해도 되나요?"
+    ],
+    "facts_needed": [
+      "실제 결제 상태",
+      "금액·통화",
+      "확인된 실패 원인",
+      "재시도 안전성 또는 대체 결제",
+      "실제 환불 조건"
+    ],
+    "source_refs": [
+      {
+        "source_id": "MASTER_V1",
+        "section": 10,
+        "line_start": 397,
+        "line_end": 433
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 11,
+        "line_start": 434,
+        "line_end": 453
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 25,
+        "line_start": 938,
+        "line_end": 951
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 28,
+        "line_start": 1030,
+        "line_end": 1045
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 30,
+        "line_start": 1094,
+        "line_end": 1109
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 31,
+        "line_start": 1110,
+        "line_end": 1171
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 32,
+        "line_start": 1172,
+        "line_end": 1191
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 70,
+        "line_start": 2295,
+        "line_end": 2310
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 126,
+        "line_start": 4163,
+        "line_end": 4224
+      }
+    ],
+    "rule_ids": [
+      "UX-STATE-001",
+      "UX-PAY-001",
+      "UX-RISK-001",
+      "UX-RECOVERY-001",
+      "UX-CTA-003"
+    ],
+    "question_provenance": "원문의 도메인 질문을 재구성한 예상 질문; 별도 사용자 조사 결과가 아님."
+  },
+  {
+    "id": "subscription",
+    "task_scope": "주어진 구독 조건에서 중요 정보·해지 영향 검토",
+    "questions": [
+      "한 번인가요, 반복인가요?",
+      "얼마씩 언제 결제하나요?",
+      "해지하면 언제까지 쓸 수 있나요?"
+    ],
+    "facts_needed": [
+      "가격·통화",
+      "결제 주기",
+      "첫/다음 결제일",
+      "자동결제 여부",
+      "이용 종료일",
+      "해지·환불·체험 전환 조건"
+    ],
+    "source_refs": [
+      {
+        "source_id": "MASTER_V1",
+        "section": 27,
+        "line_start": 996,
+        "line_end": 1029
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 28,
+        "line_start": 1030,
+        "line_end": 1045
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 29,
+        "line_start": 1046,
+        "line_end": 1093
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 69,
+        "line_start": 2273,
+        "line_end": 2294
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 70,
+        "line_start": 2295,
+        "line_end": 2310
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 71,
+        "line_start": 2311,
+        "line_end": 2329
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 72,
+        "line_start": 2330,
+        "line_end": 2340
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 77,
+        "line_start": 2408,
+        "line_end": 2445
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 78,
+        "line_start": 2446,
+        "line_end": 2487
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 126,
+        "line_start": 4163,
+        "line_end": 4224
+      }
+    ],
+    "rule_ids": [
+      "UX-SUB-001",
+      "UX-RISK-001",
+      "UX-CTA-003",
+      "UX-TIME-001"
+    ],
+    "question_provenance": "원문의 도메인 질문을 재구성한 예상 질문; 별도 사용자 조사 결과가 아님."
+  },
+  {
+    "id": "challenge",
+    "task_scope": "현재 상태와 누적 진행이 제공된 챌린지 화면 검토",
+    "questions": [
+      "오늘 했나요?",
+      "몇 번 성공했나요?",
+      "몇 번 남았나요?",
+      "얼마나 걸리나요?"
+    ],
+    "facts_needed": [
+      "오늘의 실제 상태",
+      "시도/실패/성공의 정의",
+      "전체 목표와 완료량",
+      "재참여 가능 여부",
+      "시간 정보의 기준"
+    ],
+    "source_refs": [
+      {
+        "source_id": "MASTER_V1",
+        "section": 37,
+        "line_start": 1424,
+        "line_end": 1477
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 38,
+        "line_start": 1478,
+        "line_end": 1520
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 39,
+        "line_start": 1521,
+        "line_end": 1544
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 82,
+        "line_start": 2545,
+        "line_end": 2570
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 83,
+        "line_start": 2571,
+        "line_end": 2590
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 84,
+        "line_start": 2591,
+        "line_end": 2622
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 85,
+        "line_start": 2623,
+        "line_end": 2646
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 86,
+        "line_start": 2647,
+        "line_end": 2668
+      },
+      {
+        "source_id": "MASTER_V1",
+        "section": 126,
+        "line_start": 4163,
+        "line_end": 4224
+      }
+    ],
+    "rule_ids": [
+      "UX-PROGRESS-001",
+      "UX-PROGRESS-002",
+      "UX-UI-001",
+      "UX-STATE-001"
+    ],
+    "question_provenance": "원문의 도메인 질문을 재구성한 예상 질문; 별도 사용자 조사 결과가 아님."
+  }
+]

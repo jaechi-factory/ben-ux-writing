@@ -1,0 +1,18 @@
+{
+  "checked_on": "2026-09-18",
+  "codex_cli": null,
+  "claude_cli": null,
+  "connector_directory_searched": true,
+  "search_query": "Codex Claude independent code review agent",
+  "matching_plugins_installed": false,
+  "callable_independent_agent_tool": false,
+  "independent_agent_runs": 0,
+  "external_model_runs": 0,
+  "reason": "No callable installed agent connector or CLI identified in this session",
+  "not_attempted": [
+    "Installing plugins or CLIs",
+    "Looking for credentials",
+    "Using undocumented internal endpoints"
+  ],
+  "next_execution_prerequisite": "A host/connector with an authenticated independent model and explicitly configured workspace access"
+}
